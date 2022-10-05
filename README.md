@@ -2,4 +2,4 @@
 
 ## Todo
 
-- [ ] Update Type of body
+- [ ] Update the type of input service body (current defined as `any`)
