@@ -1,5 +1,5 @@
 import { Document, Model, Types } from 'mongoose';
-import { DoctorDocument } from './doctor.interface';
+import { DoctorBaseDocument } from './doctor.interface';
 
 interface Location {
 	type: Object;
@@ -17,7 +17,7 @@ export interface Hospital {
 export interface HospitalBaseDocument extends Hospital, Document {}
 
 export interface HospitalDocument extends HospitalBaseDocument {
-	doctors?: Types.Array<DoctorDocument['_id']>;
+	doctors: Types.Array<DoctorBaseDocument['_id']>;
 }
 
 export type HospitalModel = Model<HospitalDocument>;

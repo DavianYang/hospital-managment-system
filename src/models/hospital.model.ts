@@ -22,7 +22,7 @@ const hospitalSchema = new Schema<HospitalDocument>({
 	},
 	doctors: [
 		{
-			types: Types.ObjectId,
+			type: Types.ObjectId,
 			ref: 'Doctor',
 		},
 	],

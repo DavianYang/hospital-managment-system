@@ -45,7 +45,7 @@ const doctorSchema = new Schema<DoctorDocument>({
 	},
 	hospitals: [
 		{
-			types: Types.ObjectId,
+			type: Types.ObjectId,
 			ref: 'Hospital',
 		},
 	],
