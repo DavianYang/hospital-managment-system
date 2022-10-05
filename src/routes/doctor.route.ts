@@ -1,0 +1,50 @@
+import { AuthController } from '@controllers/auth.controller';
+import { DoctorController } from '@controllers/doctor.controller';
+import { protect, restrictTo } from '@middlwares/auth.middleware';
+import { upload } from '@middlwares/image.middleware';
+import { resizeUserImage } from '@middlwares/user.middleware';
+import { ROLE_ADMIN_CODE } from 'common/constant.common';
+import { Router } from 'express';
+
+export class DoctorRoute {
+	public path = '/doctors';
+	public router = Router();
+	public doctorController = new DoctorController();
+	public authController = new AuthController();
+
+	constructor() {
+		this.initializeRoutes();
+	}
+
+	private initializeRoutes() {
+		this.router.use(protect);
+
+		this.router
+			.route(`${this.path}/me`)
+			.get(this.doctorController.getMe)
+			.get(this.doctorController.getCurrentDoctor)
+			.patch(
+				upload.single('photo'),
+				resizeUserImage,
+				this.doctorController.updateMe,
+			)
+			.delete(this.doctorController.deleteMe);
+
+		this.router.use(restrictTo(ROLE_ADMIN_CODE));
+
+		this.router
+			.route(`${this.path}/`)
+			.get(this.doctorController.getAllDoctors)
+			.post(this.doctorController.createDoctor);
+
+		this.router
+			.route(`${this.path}/schedules`)
+			.get(this.doctorController.getAllDoctorSchedules);
+
+		this.router
+			.route(`${this.path}/:id`)
+			.get(this.doctorController.getDoctor)
+			.patch(this.doctorController.updateDoctor)
+			.delete(this.doctorController.deleteDoctor);
+	}
+}

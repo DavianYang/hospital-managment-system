@@ -1,0 +1,42 @@
+{
+	"compileOnSave": false,
+	"compilerOptions": {
+		"target": "ES2017",
+		"module": "commonjs",
+		"lib": ["ES2017"],
+		"allowJs": true,
+		"declaration": true,
+		"sourceMap": true,
+		"outDir": "./dist",
+		"rootDir": "src",
+		"noEmit": false,
+		"resolveJsonModule": true,
+		"importHelpers": true,
+		"pretty": true,
+		"strict": true,
+		"strictNullChecks": false,
+		"moduleResolution": "node",
+		"baseUrl": "src",
+		"paths": {
+			"@controllers/*": ["controllers/*"],
+			"@dts/*": ["dts/*"],
+			"@exceptions/*": ["exceptions/*"],
+			"@interfaces/*": ["interfaces/*"],
+			"@middlwares/*": ["middlewares/*"],
+			"@models/*": ["models/*"],
+			"@resources/*": ["resources/*"],
+			"@routes/*": ["routes/*"],
+			"@services/*": ["services/*"],
+			"@utils/*": ["utils/*"]
+		},
+		"typeRoots": ["node_modules/@types"],
+		"allowSyntheticDefaultImports": true,
+		"esModuleInterop": true,
+		"experimentalDecorators": true,
+		"emitDecoratorMetadata": true,
+		"skipLibCheck": true,
+		"forceConsistentCasingInFileNames": true
+	},
+	"include": ["src/**/*.ts", "src/**/*.json", ".env", "src/app.ts"],
+	"exclude": ["node_modules", "data"]
+}
