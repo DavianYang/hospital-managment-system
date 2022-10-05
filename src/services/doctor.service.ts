@@ -5,7 +5,7 @@ import {
 	deleteOne,
 	findAll,
 	findOne,
-	updateOne
+	updateOne,
 } from '@services/factory.service';
 import { filteredObj } from '@utils/filter-obj';
 import { UserService } from './user.service';
@@ -27,6 +27,7 @@ export class DoctorService {
 			username: doctorBody.username,
 			email: doctorBody.email,
 			specialization: doctorBody.specialization,
+			department: doctorBody.department,
 			feesPerSession: doctorBody.feesPerSession,
 			phoneNumber: doctorBody.phoneNumber,
 			scheduleAvailable: doctorBody.scheduleAvailable,
@@ -81,7 +82,8 @@ export class DoctorService {
 			'phoneNumber',
 			'specialization',
 			'feesPerSession',
-			'scheduleAvailable'
+			'scheduleAvailable',
+			'department',
 		);
 
 		if (file) filteredDoctor.photo = file;

@@ -4,7 +4,7 @@ import { DoctorRoute } from './doctor.route';
 
 export class PublicRoute {
 	public router = Router();
-    private doctorRoute = new DoctorRoute()
+	private doctorRoute = new DoctorRoute();
 	private doctorPath = this.doctorRoute.path;
 	private doctorController = new DoctorController();
 
@@ -13,13 +13,13 @@ export class PublicRoute {
 	}
 
 	private initializeRoutes() {
-        // Doctor
-        this.router
-        .route(`${this.doctorPath}/`)
-        .get(this.doctorController.getAllDoctors)
+		// Doctor
+		this.router
+			.route(`${this.doctorPath}/`)
+			.get(this.doctorController.getAllDoctors);
 
-        this.router
-        .route(`${this.doctorPath}/:id`)
-        .get(this.doctorController.getDoctor)
+		this.router
+			.route(`${this.doctorPath}/:id`)
+			.get(this.doctorController.getDoctor);
 	}
 }

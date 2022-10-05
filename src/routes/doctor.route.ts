@@ -32,9 +32,7 @@ export class DoctorRoute {
 
 		this.router.use(restrictTo(ROLE_ADMIN_CODE));
 
-		this.router
-			.route(`${this.path}/`)
-			.post(this.doctorController.createDoctor);
+		this.router.route(`${this.path}/`).post(this.doctorController.createDoctor);
 
 		this.router
 			.route(`${this.path}/schedules`)

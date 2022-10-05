@@ -18,14 +18,14 @@ const doctorSchema = new Schema<DoctorDocument>({
 		type: String,
 		default: 'doctor.jpg',
 	},
-	phoneNumber: [
-		{
-			type: String,
-		},
-	],
+	phoneNumber: [{ type: String }],
 	specialization: {
 		type: String,
 		required: [true, 'A doctor must have a specialization!'],
+	},
+	department: {
+		type: String,
+		required: [true, 'A doctor must have a department!'],
 	},
 	feesPerSession: {
 		type: Number,
@@ -43,7 +43,14 @@ const doctorSchema = new Schema<DoctorDocument>({
 		type: Types.ObjectId,
 		ref: 'User',
 	},
+	hospitals: [
+		{
+			types: Types.ObjectId,
+			ref: 'Hospital',
+		},
+	],
 });
+
 doctorSchema.pre<Query<DoctorDocument, DoctorDocument>>(
 	/^find/,
 	function (next: (err?: Error) => void) {
