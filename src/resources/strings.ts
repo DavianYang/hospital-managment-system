@@ -7,6 +7,7 @@ export const YOUR_PASSWORD_RESET_TOKEN =
 // NOT FOUND
 export const USER_WITH_ID_NOT_FOUND = 'No user found with that ID.';
 export const ROLE_WITH_ID_NOT_FOUND = 'No role found with that ID.';
+export const HOSPITAL_WITH_ID_NOT_FOUND = 'No hospital found with that ID.';
 export const USER_WITH_EMAIL_NOT_FOUND = 'There is no user with email address.';
 
 // NOT DEFINED

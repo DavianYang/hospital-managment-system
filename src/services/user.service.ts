@@ -1,3 +1,8 @@
+import {
+	ROLE_ADMIN_CODE,
+	ROLE_DOCTOR_CODE,
+	ROLE_PATIENT_CODE,
+} from '@commons/constant.common';
 import { filterObj, QueryString } from '@interfaces/query.interface';
 import { userModel } from '@models/user.model';
 import {
@@ -6,11 +11,6 @@ import {
 	findOne,
 	updateOne,
 } from '@services/factory.service';
-import {
-	ROLE_ADMIN_CODE,
-	ROLE_DOCTOR_CODE,
-	ROLE_PATIENT_CODE,
-} from 'common/constant.common';
 import { ObjectId } from 'mongodb';
 import { RoleService } from './role.service';
 

@@ -18,6 +18,7 @@
 		"moduleResolution": "node",
 		"baseUrl": "src",
 		"paths": {
+			"@commons/*": ["commons/*"],
 			"@controllers/*": ["controllers/*"],
 			"@dts/*": ["dts/*"],
 			"@exceptions/*": ["exceptions/*"],

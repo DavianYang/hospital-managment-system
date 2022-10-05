@@ -1,5 +1,6 @@
 import { AdminRoute } from '@routes/admin.route';
 import { DoctorRoute } from '@routes/doctor.route';
+import { HospitalRoute } from '@routes/hospital.route';
 import { IndexRoute } from '@routes/index.route';
 import { LoginRoute } from '@routes/login.route';
 import { PublicRoute } from '@routes/public.route';
@@ -19,6 +20,7 @@ const app = new App([
 	new PublicRoute(),
 	new LoginRoute(),
 	new DoctorRoute(),
+	new HospitalRoute(),
 	new AdminRoute(),
 	new RoleRoute(),
 ]);

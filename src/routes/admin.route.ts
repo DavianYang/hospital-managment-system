@@ -1,9 +1,9 @@
+import { ROLE_ADMIN_CODE } from '@commons/constant.common';
 import { AdminController } from '@controllers/admin.controller';
 import { AuthController } from '@controllers/auth.controller';
 import { protect, restrictTo } from '@middlwares/auth.middleware';
 import { upload } from '@middlwares/image.middleware';
 import { resizeUserImage } from '@middlwares/user.middleware';
-import { ROLE_ADMIN_CODE } from 'common/constant.common';
 import { Router } from 'express';
 
 export class AdminRoute {

@@ -1,6 +1,3 @@
-import { adminModel } from '@models/admin.model';
-import { roleModel } from '@models/role.model';
-import { userModel } from '@models/user.model';
 import {
 	ROLE_ADMIN_CODE,
 	ROLE_ADMIN_DESCRIPTION,
@@ -8,7 +5,10 @@ import {
 	ROLE_DOCTOR_DESCRIPTION,
 	ROLE_PATIENT_CODE,
 	ROLE_PATIENT_DESCRIPTION,
-} from 'common/constant.common';
+} from '@commons/constant.common';
+import { adminModel } from '@models/admin.model';
+import { roleModel } from '@models/role.model';
+import { userModel } from '@models/user.model';
 import { config } from 'config';
 import { logger } from './logger';
 

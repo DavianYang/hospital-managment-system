@@ -1,12 +1,12 @@
 import { ROLE_ADMIN_CODE } from '@commons/constant.common';
-import { RoleController } from '@controllers/role.controller';
+import { HospitalController } from '@controllers/hospital.controller';
 import { protect, restrictTo } from '@middlwares/auth.middleware';
 import { Router } from 'express';
 
-export class RoleRoute {
-	public path = '/roles';
+export class HospitalRoute {
+	public path = '/hospitals';
 	public router = Router();
-	public roleController = new RoleController();
+	public hospitalController = new HospitalController();
 
 	constructor() {
 		this.initializeRoutes();
@@ -17,13 +17,11 @@ export class RoleRoute {
 
 		this.router
 			.route(`${this.path}/`)
-			.get(this.roleController.getAllRoles)
-			.post(this.roleController.createRole);
+			.post(this.hospitalController.createHospital);
 
 		this.router
 			.route(`${this.path}/:id`)
-			.get(this.roleController.getRole)
-			.patch(this.roleController.updateRole)
-			.delete(this.roleController.deleteRole);
+			.patch(this.hospitalController.updateHospital)
+			.delete(this.hospitalController.deleteHospital);
 	}
 }
