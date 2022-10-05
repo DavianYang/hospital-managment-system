@@ -2,4 +2,4 @@
 
 ## Todo
 
-[ ] Update Type of body
+- [ ] Update Type of body
