@@ -2,7 +2,7 @@
 	"name": "hospital-management-system",
 	"version": "1.0.0",
 	"description": "Hospital Management API",
-	"main": "src/app.js",
+	"main": "dist/server.js",
 	"scripts": {
 		"build": "tsc && npx tsc-alias && pnpm run fmt",
 		"dev": "NODE_ENV=development nodemon",

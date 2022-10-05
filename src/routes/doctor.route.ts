@@ -34,7 +34,6 @@ export class DoctorRoute {
 
 		this.router
 			.route(`${this.path}/`)
-			.get(this.doctorController.getAllDoctors)
 			.post(this.doctorController.createDoctor);
 
 		this.router
@@ -43,7 +42,6 @@ export class DoctorRoute {
 
 		this.router
 			.route(`${this.path}/:id`)
-			.get(this.doctorController.getDoctor)
 			.patch(this.doctorController.updateDoctor)
 			.delete(this.doctorController.deleteDoctor);
 	}

@@ -2,6 +2,7 @@ import { AdminRoute } from '@routes/admin.route';
 import { DoctorRoute } from '@routes/doctor.route';
 import { IndexRoute } from '@routes/index.route';
 import { LoginRoute } from '@routes/login.route';
+import { PublicRoute } from '@routes/public.route';
 import { RoleRoute } from '@routes/role.route';
 import { logger } from '@utils/logger';
 import App from './app';
@@ -15,9 +16,10 @@ process.on('uncaughtException', (err: Error) => {
 
 const app = new App([
 	new IndexRoute(),
+	new PublicRoute(),
 	new LoginRoute(),
-	new AdminRoute(),
 	new DoctorRoute(),
+	new AdminRoute(),
 	new RoleRoute(),
 ]);
 
