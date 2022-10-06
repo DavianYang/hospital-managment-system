@@ -50,18 +50,6 @@ export class DoctorController {
 		},
 	);
 
-	public getAllDoctorSchedules = catchAsync(
-		async (req: Request, res: Response, next: NextFunction) => {
-			const schedules = await this.doctorService.findAllSchedules();
-
-			res.status(200).json({
-				status: 'success',
-				results: schedules.length,
-				data: schedules,
-			});
-		},
-	);
-
 	public getCurrentDoctor = catchAsync(
 		async (req: Request, res: Response, next: NextFunction) => {
 			const doctorUser = await this.userService.findUserById(req.params.id);
@@ -113,19 +101,6 @@ export class DoctorController {
 			},
 		});
 	});
-
-	public createAvailableSchedule = catchAsync(
-		async (req: Request, res: Response) => {
-			await this.doctorService.addSchedules(req.user.id, req.body.schedules);
-
-			res.status(200).json({
-				status: 'success',
-				data: {
-					data: null,
-				},
-			});
-		},
-	);
 
 	// UPDATE
 	public updateMe = catchAsync(

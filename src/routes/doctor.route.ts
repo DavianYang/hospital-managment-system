@@ -30,17 +30,9 @@ export class DoctorRoute {
 			)
 			.delete(this.doctorController.deleteMe);
 
-		this.router
-			.route(`${this.path}/me/schedule`)
-			.post(this.doctorController.createAvailableSchedule);
-
 		this.router.use(restrictTo(ROLE_ADMIN_CODE));
 
 		this.router.route(`${this.path}/`).post(this.doctorController.createDoctor);
-
-		this.router
-			.route(`${this.path}/schedules`)
-			.get(this.doctorController.getAllDoctorSchedules);
 
 		this.router
 			.route(`${this.path}/:id`)

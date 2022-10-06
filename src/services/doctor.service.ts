@@ -1,4 +1,3 @@
-import { Schedule } from '@interfaces/doctor.interface';
 import { filterObj, QueryString } from '@interfaces/query.interface';
 import { UserDocument } from '@interfaces/user.interface';
 import { doctorModel } from '@models/doctor.model';
@@ -6,7 +5,7 @@ import {
 	deleteOne,
 	findAll,
 	findOne,
-	updateOne,
+	updateOne
 } from '@services/factory.service';
 import { filteredObj } from '@utils/filter-obj';
 import { UserService } from './user.service';
@@ -44,22 +43,9 @@ export class DoctorService {
 		);
 	}
 
-	public async addSchedules(userId: string, schedules: Array<Schedule>) {
-		await this.doctors.updateOne(
-			{ user: userId },
-			{ $push: { scheduleAvailable: schedules } },
-		);
-	}
-
 	// FIND ALL
 	public async findAllDoctors(query: object) {
 		return await findAll(this.doctors, query as QueryString);
-	}
-
-	public async findAllSchedules() {
-		return await findAll(this.doctors, {
-			fields: 'scheduleAvailable',
-		} as QueryString);
 	}
 
 	// FIND ONE
