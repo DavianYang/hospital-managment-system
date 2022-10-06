@@ -10,6 +10,8 @@ export const ROLE_WITH_ID_NOT_FOUND = 'No role found with that ID.';
 export const DOCTOR_WITH_ID_NOT_FOUND = 'No doctor found with that ID.';
 export const HOSPITAL_WITH_ID_NOT_FOUND = 'No hospital found with that ID.';
 export const SCHEDULE_WITH_ID_NOT_FOUND = 'No schedule found with that ID.';
+export const APPOINTMENT_WITH_ID_NOT_FOUND =
+	'No appointment found with that ID.';
 export const USER_WITH_EMAIL_NOT_FOUND = 'There is no user with email address.';
 export const DOCTOR_WITH_ID_NOT_FOUND_IN_HOSPITAL =
 	'There is no doctor with that ID in this hospital.';

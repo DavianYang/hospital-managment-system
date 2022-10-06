@@ -34,10 +34,12 @@ export class PatientRoute {
 
 		this.router
 			.route(`${this.path}/`)
+			.get(this.patientController.getAllPatients)
 			.post(this.patientController.createPatient);
 
 		this.router
 			.route(`${this.path}/:id`)
+			.get(this.patientController.getPatient)
 			.patch(this.patientController.updatePatient)
 			.delete(this.patientController.deletePatient);
 	}

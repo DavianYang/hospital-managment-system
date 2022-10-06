@@ -92,7 +92,7 @@ export class PatientService {
 			'gender',
 		);
 
-		if (body.file) filteredPatient.photo = file;
+		if (file) filteredPatient.photo = file;
 
 		const updatedAdmin = await this.patients.findOneAndUpdate(
 			{ user: userId },
