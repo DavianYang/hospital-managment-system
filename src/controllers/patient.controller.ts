@@ -25,7 +25,11 @@ export class PatientController {
 			}
 			const patient = await this.patientService.createPatient(req.body);
 
-			const token = this.authService.generateJWTToken(req, res, patient.user._id);
+			const token = this.authService.generateJWTToken(
+				req,
+				res,
+				patient.user._id,
+			);
 
 			res.status(201).json({
 				status: 'success',
@@ -58,7 +62,9 @@ export class PatientController {
 				return next(new ApiError(strings.USER_WITH_ID_NOT_FOUND, 404));
 			}
 
-			const patient = await this.patientService.findPatientByUserId(patientUser);
+			const patient = await this.patientService.findPatientByUserId(
+				patientUser,
+			);
 
 			if (!patient) {
 				return next(new ApiError(strings.USER_WITH_ID_NOT_FOUND, 404));

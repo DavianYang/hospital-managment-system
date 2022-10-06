@@ -6,7 +6,7 @@ import { Router } from 'express';
 export class RoleRoute {
 	public path = '/roles';
 	public router = Router();
-	public roleController = new RoleController();
+	private roleController = new RoleController();
 
 	constructor() {
 		this.initializeRoutes();

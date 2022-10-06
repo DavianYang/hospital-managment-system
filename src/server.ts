@@ -3,6 +3,7 @@ import { DoctorRoute } from '@routes/doctor.route';
 import { HospitalRoute } from '@routes/hospital.route';
 import { IndexRoute } from '@routes/index.route';
 import { LoginRoute } from '@routes/login.route';
+import { PatientRoute } from '@routes/patient.route';
 import { PublicRoute } from '@routes/public.route';
 import { RoleRoute } from '@routes/role.route';
 import { ScheduleRoute } from '@routes/schedule.route';
@@ -20,6 +21,7 @@ const app = new App([
 	new IndexRoute(),
 	new PublicRoute(),
 	new LoginRoute(),
+	new PatientRoute(),
 	new DoctorRoute(),
 	new ScheduleRoute(),
 	new HospitalRoute(),

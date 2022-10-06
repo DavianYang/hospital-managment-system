@@ -6,7 +6,7 @@ import { Router } from 'express';
 export class ScheduleRoute {
 	public path = '/schedules';
 	public router = Router();
-	public scheduleController = new ScheduleController();
+	private scheduleController = new ScheduleController();
 
 	constructor() {
 		this.initializeRoutes();

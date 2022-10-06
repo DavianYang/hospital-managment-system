@@ -25,7 +25,11 @@ export class DoctorController {
 			}
 			const doctor = await this.doctorService.createDoctor(req.body);
 
-			const token = this.authService.generateJWTToken(req, res, doctor.user._id);
+			const token = this.authService.generateJWTToken(
+				req,
+				res,
+				doctor.user._id,
+			);
 
 			res.status(201).json({
 				status: 'success',

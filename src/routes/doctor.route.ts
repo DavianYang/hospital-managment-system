@@ -1,5 +1,4 @@
 import { ROLE_ADMIN_CODE } from '@commons/constant.common';
-import { AuthController } from '@controllers/auth.controller';
 import { DoctorController } from '@controllers/doctor.controller';
 import { protect, restrictTo } from '@middlwares/auth.middleware';
 import { upload } from '@middlwares/image.middleware';
@@ -10,7 +9,6 @@ export class DoctorRoute {
 	public path = '/doctors';
 	public router = Router();
 	public doctorController = new DoctorController();
-	public authController = new AuthController();
 
 	constructor() {
 		this.initializeRoutes();
@@ -29,6 +27,9 @@ export class DoctorRoute {
 				this.doctorController.updateMe,
 			)
 			.delete(this.doctorController.deleteMe);
+
+		// TODO: enable current doctor to see his schedules and appointments
+		this.router.route(`${this.path}/me/schedules`);
 
 		this.router.use(restrictTo(ROLE_ADMIN_CODE));
 

@@ -6,7 +6,7 @@ import { Router } from 'express';
 export class HospitalRoute {
 	public path = '/hospitals';
 	public router = Router();
-	public hospitalController = new HospitalController();
+	private hospitalController = new HospitalController();
 
 	constructor() {
 		this.initializeRoutes();

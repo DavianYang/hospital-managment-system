@@ -17,11 +17,7 @@ export class AuthService {
 		return token;
 	};
 
-	public generateJWTToken = (
-		req: Request,
-		res: Response,
-		userId: string
-	) => {
+	public generateJWTToken = (req: Request, res: Response, userId: string) => {
 		const token = this.signJWTToken(userId);
 
 		// Save jwt token to cookie and set security and expired date

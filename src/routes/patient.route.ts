@@ -1,14 +1,14 @@
 import { ROLE_ADMIN_CODE } from '@commons/constant.common';
-import { AdminController } from '@controllers/admin.controller';
+import { PatientController } from '@controllers/patient.controller';
 import { protect, restrictTo } from '@middlwares/auth.middleware';
 import { upload } from '@middlwares/image.middleware';
 import { resizeUserImage } from '@middlwares/user.middleware';
 import { Router } from 'express';
 
-export class AdminRoute {
-	public path = '/admins';
+export class PatientRoute {
+	public path = '/patients';
 	public router = Router();
-	private adminController = new AdminController();
+	private patientController = new PatientController();
 
 	constructor() {
 		this.initializeRoutes();
@@ -19,26 +19,26 @@ export class AdminRoute {
 
 		this.router
 			.route(`${this.path}/me`)
-			.get(this.adminController.getMe)
-			.get(this.adminController.getCurrentAdmin)
+			.get(this.patientController.getMe)
+			.get(this.patientController.getCurrentPatient)
 			.patch(
 				upload.single('photo'),
 				resizeUserImage,
-				this.adminController.updateMe,
+				this.patientController.updateMe,
 			)
-			.delete(this.adminController.deleteMe);
+			.delete(this.patientController.deleteMe);
+
+		// TODO: enable patient to see his appointments
 
 		this.router.use(restrictTo(ROLE_ADMIN_CODE));
 
 		this.router
 			.route(`${this.path}/`)
-			.get(this.adminController.getAllAdmins)
-			.post(this.adminController.createAdmin);
+			.post(this.patientController.createPatient);
 
 		this.router
 			.route(`${this.path}/:id`)
-			.get(this.adminController.getAdmin)
-			.patch(this.adminController.updateAdmin)
-			.delete(this.adminController.deleteAdmin);
+			.patch(this.patientController.updatePatient)
+			.delete(this.patientController.deletePatient);
 	}
 }
