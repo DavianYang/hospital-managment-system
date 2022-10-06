@@ -31,9 +31,6 @@ const doctorSchema = new Schema<DoctorDocument>({
 		type: Number,
 		required: [true, 'A doctor must have a feesPerSession!'],
 	},
-	scheduleAvailable: [
-		{ time: Date, isBooked: { type: Boolean, default: false } },
-	],
 	active: {
 		type: Boolean,
 		default: true,
@@ -49,7 +46,15 @@ const doctorSchema = new Schema<DoctorDocument>({
 			ref: 'Hospital',
 		},
 	],
+	schedules: [
+		{
+			type: Types.ObjectId,
+			ref: 'Schedule',
+		},
+	],
 });
+
+doctorSchema.index({ hospitals: 1 }, { unique: true });
 
 doctorSchema.pre<Query<DoctorDocument, DoctorDocument>>(
 	/^find/,

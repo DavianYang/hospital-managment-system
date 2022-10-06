@@ -1,11 +1,7 @@
 import { Document, Model, Types } from 'mongoose';
 import { HospitalBaseDocument } from './hospital.interface';
+import { ScheduleBaseDocument } from './schedule.interface';
 import { UserBaseDocument } from './user.interface';
-
-export interface Schedule {
-	time: string;
-	isBooked: Boolean;
-}
 
 export interface Doctor {
 	username: string;
@@ -15,7 +11,6 @@ export interface Doctor {
 	department: string;
 	feesPerSession: number;
 	photo?: string;
-	scheduleAvailable: Schedule[];
 }
 
 export interface DoctorBaseDocument extends Doctor, Document {
@@ -25,6 +20,7 @@ export interface DoctorBaseDocument extends Doctor, Document {
 export interface DoctorDocument extends DoctorBaseDocument {
 	user: UserBaseDocument['_id'];
 	hospitals?: Types.Array<HospitalBaseDocument['_id']>;
+	schedules?: Types.Array<ScheduleBaseDocument['_id']>;
 }
 
 export type DoctorModel = Model<DoctorDocument>;

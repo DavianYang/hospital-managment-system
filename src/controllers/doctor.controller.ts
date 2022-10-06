@@ -20,7 +20,7 @@ export class DoctorController {
 	public register = catchAsync(
 		async (req: Request, res: Response, next: NextFunction) => {
 			// If given email is already registered
-			if (await this.userService.users.isEmailTaken(req.body.email)) {
+			if (await this.userService.isEmailTaken(req.body.email)) {
 				return next(new ApiError(strings.EMAIL_ALREADY_TAKEN, 400));
 			}
 			const doctor = await this.doctorService.createDoctor(req.body);
@@ -113,6 +113,19 @@ export class DoctorController {
 			},
 		});
 	});
+
+	public createAvailableSchedule = catchAsync(
+		async (req: Request, res: Response) => {
+			await this.doctorService.addSchedules(req.user.id, req.body.schedules);
+
+			res.status(200).json({
+				status: 'success',
+				data: {
+					data: null,
+				},
+			});
+		},
+	);
 
 	// UPDATE
 	public updateMe = catchAsync(

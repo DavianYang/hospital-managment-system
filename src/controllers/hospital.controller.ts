@@ -49,6 +49,17 @@ export class HospitalController {
 		});
 	});
 
+	public addDocotor = catchAsync(async (req: Request, res: Response) => {
+		await this.hospitalService.addDoctor(req.params.id, req.body.doctorId);
+
+		res.status(200).json({
+			status: 'success',
+			data: {
+				data: null,
+			},
+		});
+	});
+
 	// UPDATE
 	public updateHospital = catchAsync(
 		async (req: Request, res: Response, next: NextFunction) => {

@@ -8,13 +8,23 @@ import {
 	findOne,
 	updateOne,
 } from '@services/factory.service';
+import { DoctorService } from './doctor.service';
 
 export class HospitalService {
-	public hospitals = hospitalModel;
+	private hospitals = hospitalModel;
+	private doctorService = new DoctorService();
 
 	// CREATE
 	public createHospital = async (hospitalBody: Hospital) =>
 		await createOne(this.hospitals, hospitalBody);
+
+	public addDoctor = async (hospitalId: string, doctorId: string) => {
+		await this.hospitals.updateOne(
+			{ _id: hospitalId },
+			{ $push: { doctors: doctorId } },
+		);
+		await this.doctorService.addHospital(hospitalId, doctorId);
+	};
 
 	// FIND ALL
 	public findAllHospitals = async (query: object) =>

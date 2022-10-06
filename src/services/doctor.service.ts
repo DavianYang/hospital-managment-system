@@ -1,3 +1,4 @@
+import { Schedule } from '@interfaces/doctor.interface';
 import { filterObj, QueryString } from '@interfaces/query.interface';
 import { UserDocument } from '@interfaces/user.interface';
 import { doctorModel } from '@models/doctor.model';
@@ -11,7 +12,7 @@ import { filteredObj } from '@utils/filter-obj';
 import { UserService } from './user.service';
 
 export class DoctorService {
-	public doctors = doctorModel;
+	private doctors = doctorModel;
 
 	private userService = new UserService();
 
@@ -34,6 +35,20 @@ export class DoctorService {
 			photo: doctorBody.photo,
 			user: doctorUser._id,
 		});
+	}
+
+	public async addHospital(hospitalId: string, doctorId: string) {
+		await this.doctors.updateOne(
+			{ _id: doctorId },
+			{ $push: { hospitals: hospitalId } },
+		);
+	}
+
+	public async addSchedules(userId: string, schedules: Array<Schedule>) {
+		await this.doctors.updateOne(
+			{ user: userId },
+			{ $push: { scheduleAvailable: schedules } },
+		);
 	}
 
 	// FIND ALL

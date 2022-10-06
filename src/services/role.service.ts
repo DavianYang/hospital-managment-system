@@ -10,7 +10,7 @@ import {
 } from '@services/factory.service';
 
 export class RoleService {
-	public roles = roleModel;
+	private roles = roleModel;
 
 	// CREATE
 	public createRole = async (roleBody: Role) =>

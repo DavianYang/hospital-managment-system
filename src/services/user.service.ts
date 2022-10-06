@@ -15,7 +15,7 @@ import { ObjectId } from 'mongodb';
 import { RoleService } from './role.service';
 
 export class UserService {
-	public users = userModel;
+	private users = userModel;
 
 	private roleService = new RoleService();
 
@@ -141,4 +141,6 @@ export class UserService {
 			active: false,
 		});
 	};
+
+	public isEmailTaken = (email: string) => this.users.isEmailTaken(email);
 }

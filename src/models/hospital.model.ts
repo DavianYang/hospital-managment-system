@@ -7,6 +7,7 @@ import { model, Schema, Types } from 'mongoose';
 const hospitalSchema = new Schema<HospitalDocument>({
 	name: {
 		type: String,
+		unique: true,
 		required: [true, 'A doctor must have a username!'],
 	},
 	phoneNumber: [{ type: String }],
@@ -27,6 +28,8 @@ const hospitalSchema = new Schema<HospitalDocument>({
 		},
 	],
 });
+
+hospitalSchema.index({ doctors: 1 }, { unique: true });
 
 export const hospitalModel = model<HospitalDocument, HospitalModel>(
 	'Hospital',
