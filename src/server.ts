@@ -5,6 +5,7 @@ import { IndexRoute } from '@routes/index.route';
 import { LoginRoute } from '@routes/login.route';
 import { PublicRoute } from '@routes/public.route';
 import { RoleRoute } from '@routes/role.route';
+import { ScheduleRoute } from '@routes/schedule.route';
 import { logger } from '@utils/logger';
 import App from './app';
 
@@ -20,6 +21,7 @@ const app = new App([
 	new PublicRoute(),
 	new LoginRoute(),
 	new DoctorRoute(),
+	new ScheduleRoute(),
 	new HospitalRoute(),
 	new AdminRoute(),
 	new RoleRoute(),

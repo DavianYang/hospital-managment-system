@@ -1,8 +1,10 @@
 import { DoctorController } from '@controllers/doctor.controller';
 import { HospitalController } from '@controllers/hospital.controller';
+import { ScheduleController } from '@controllers/schedule.controller';
 import { Router } from 'express';
 import { DoctorRoute } from './doctor.route';
 import { HospitalRoute } from './hospital.route';
+import { ScheduleRoute } from './schedule.route';
 
 export class PublicRoute {
 	public router = Router();
@@ -16,6 +18,11 @@ export class PublicRoute {
 	private hospitalRoute = new HospitalRoute();
 	private hospitalPath = this.hospitalRoute.path;
 	private hospitalController = new HospitalController();
+
+	// Schedule
+	private scheduleRoute = new ScheduleRoute();
+	private schedulePath = this.scheduleRoute.path;
+	private scheduleController = new ScheduleController();
 
 	constructor() {
 		this.initializeRoutes();
@@ -39,5 +46,14 @@ export class PublicRoute {
 		this.router
 			.route(`${this.hospitalPath}/:id`)
 			.get(this.hospitalController.getHospital);
+
+		// Schedule
+		this.router
+			.route(`${this.schedulePath}/`)
+			.get(this.scheduleController.getAllSchedules);
+
+		this.router
+			.route(`${this.schedulePath}/:id`)
+			.get(this.scheduleController.getSchedule);
 	}
 }

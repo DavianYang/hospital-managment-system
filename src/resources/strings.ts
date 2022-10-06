@@ -7,8 +7,12 @@ export const YOUR_PASSWORD_RESET_TOKEN =
 // NOT FOUND
 export const USER_WITH_ID_NOT_FOUND = 'No user found with that ID.';
 export const ROLE_WITH_ID_NOT_FOUND = 'No role found with that ID.';
+export const DOCTOR_WITH_ID_NOT_FOUND = 'No doctor found with that ID.';
 export const HOSPITAL_WITH_ID_NOT_FOUND = 'No hospital found with that ID.';
+export const SCHEDULE_WITH_ID_NOT_FOUND = 'No schedule found with that ID.';
 export const USER_WITH_EMAIL_NOT_FOUND = 'There is no user with email address.';
+export const DOCTOR_WITH_ID_NOT_FOUND_IN_HOSPITAL =
+	'There is no doctor with that ID in this hospital.';
 
 // NOT DEFINED
 export const USER_ROUTE_NOT_DEFINED =
@@ -32,6 +36,8 @@ export const PASSWORD_RECENT_CHANGED =
 export const INCORRECT_CURRENT_PASSWORD = 'Your current password is wrong.';
 export const REQUEST_OVERLOAD_TRY_AGAIN_IN_AN_HOUR =
 	'Too many requests from this IP, please try again in an hour.';
+export const INVALID_STARTTIME_AND_ENDTIME =
+	'Pleae provide correct startTime and endTime';
 
 // ERROR DURING PROCESS
 export const TROUBLE_SENDING_EMAIL =

@@ -3,11 +3,15 @@ import { DoctorBaseDocument } from './doctor.interface';
 import { HospitalBaseDocument } from './hospital.interface';
 
 export interface Schedule {
-	startTime: Date;
-	endTime: Date;
+	date: Date;
+	startTime: Number;
+	endTime: Number;
 }
 
-export interface ScheduleBaseDocument extends Schedule, Document {}
+export interface ScheduleBaseDocument extends Schedule, Document {
+	duration: Number;
+	approximatePatients: Number;
+}
 
 export interface ScheduleDocument extends ScheduleBaseDocument {
 	doctor: DoctorBaseDocument['_id'];
