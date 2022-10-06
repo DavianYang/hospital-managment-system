@@ -120,17 +120,6 @@ export class UserService {
 		return await updateOne(this.users, id, body);
 	};
 
-	public updateCurrentUser = async (id: string, body: object) => {
-		const filteredObj = this.filterObj(body as filterObj, 'name', 'email');
-
-		const updatedUser = await this.users.findByIdAndUpdate(id, filteredObj, {
-			runValidators: true,
-			new: true,
-		});
-
-		return updatedUser;
-	};
-
 	// DELETE
 	public deleteUser = async (id: string) => {
 		return await deleteOne(this.users, id);

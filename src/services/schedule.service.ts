@@ -6,7 +6,7 @@ import {
 	deleteOne,
 	findAll,
 	findOne,
-	updateOne
+	updateOne,
 } from '@services/factory.service';
 import { isNegative } from '@utils/shared.util';
 import { NextFunction } from 'express';
@@ -92,8 +92,20 @@ export class ScheduleService {
 	public updateSchedule = async (id: string, body: any, next: NextFunction) => {
 		const schedule = await findOne(this.schedules, id);
 
-		const parsedStartTime = body.startTime && moment(`${body.date ? body.date : schedule.date} ${body.startTime}`, 'MM-DD-YYYY HH:mm').valueOf();
-		const parsedEndTime = body.endTime && moment(`${body.date ? body.date : schedule.date} ${body.endTime}`, 'MM-DD-YYYY HH:mm').valueOf();
+		const parsedStartTime =
+			body.startTime &&
+			moment(
+				`${body.date ? body.date : schedule.date} ${body.startTime}`,
+				'MM-DD-YYYY HH:mm',
+			).valueOf();
+
+		const parsedEndTime =
+			body.endTime &&
+			moment(
+				`${body.date ? body.date : schedule.date} ${body.endTime}`,
+				'MM-DD-YYYY HH:mm',
+			).valueOf();
+
 		const overlap = await this.findOverlapSchedule(
 			parsedStartTime,
 			parsedEndTime,
@@ -103,13 +115,17 @@ export class ScheduleService {
 			return next(new ApiError(strings.INVALID_STARTTIME_AND_ENDTIME, 400));
 		}
 
-		const doctor = await this.doctorService.findDoctor(body.doctorId || schedule.doctor._id);
+		const doctor = await this.doctorService.findDoctor(
+			body.doctorId || schedule.doctor._id,
+		);
 
 		if (!doctor) {
 			return next(new ApiError(strings.DOCTOR_WITH_ID_NOT_FOUND, 400));
 		}
 
-		const hospital = await this.hosptialService.findHospital(body.hospitalId || schedule.hospital._id);
+		const hospital = await this.hosptialService.findHospital(
+			body.hospitalId || schedule.hospital._id,
+		);
 
 		if (!hospital) {
 			return next(new ApiError(strings.HOSPITAL_WITH_ID_NOT_FOUND, 400));
@@ -126,7 +142,7 @@ export class ScheduleService {
 			endTime: parsedEndTime,
 			date: body.date,
 			doctor: body.doctorId,
-			hospital: body.hospitalId
+			hospital: body.hospitalId,
 		});
 	};
 

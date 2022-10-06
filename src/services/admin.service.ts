@@ -16,16 +16,17 @@ export class AdminService {
 	private userService = new UserService();
 
 	// CREATE
-	public createAdmin = async (adminBody: any) => {
+	public createAdmin = async (body: any) => {
+		const { email, password, passwordConfirm, photo } = body;
 		const adminUser = await this.userService.createAdminUser(
-			adminBody.email,
-			adminBody.password,
-			adminBody.passwordConfirm,
+			email,
+			password,
+			passwordConfirm,
 		);
 
 		return await this.admins.create({
-			email: adminBody.email,
-			photo: adminBody.file && adminBody.file.filename,
+			email,
+			photo,
 			user: adminUser._id,
 		});
 	};

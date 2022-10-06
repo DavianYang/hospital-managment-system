@@ -16,22 +16,32 @@ export class DoctorService {
 	private userService = new UserService();
 
 	// CREATE
-	public async createDoctor(doctorBody: any) {
+	public async createDoctor(body: any) {
+		const {
+			username,
+			email,
+			photo,
+			phoneNumber,
+			specialization,
+			department,
+			feesPerSession,
+			password,
+			passwordConfirm,
+		} = body;
 		const doctorUser = await this.userService.createDoctorUser(
-			doctorBody.email,
-			doctorBody.password,
-			doctorBody.passwordConfirm,
+			email,
+			password,
+			passwordConfirm,
 		);
 
 		return await this.doctors.create({
-			username: doctorBody.username,
-			email: doctorBody.email,
-			specialization: doctorBody.specialization,
-			department: doctorBody.department,
-			feesPerSession: doctorBody.feesPerSession,
-			phoneNumber: doctorBody.phoneNumber,
-			scheduleAvailable: doctorBody.scheduleAvailable,
-			photo: doctorBody.photo,
+			username,
+			email,
+			specialization,
+			department,
+			feesPerSession,
+			phoneNumber,
+			photo,
 			user: doctorUser._id,
 		});
 	}
@@ -79,11 +89,9 @@ export class DoctorService {
 		const filteredDoctor = filteredObj(
 			body as filterObj,
 			'username',
-			'photo',
 			'phoneNumber',
 			'specialization',
 			'feesPerSession',
-			'scheduleAvailable',
 			'department',
 		);
 

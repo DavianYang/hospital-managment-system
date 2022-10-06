@@ -8,9 +8,10 @@ enum Gender {
 }
 
 export interface Patient {
-	name: string;
+	username: string;
 	email: string;
 	phoneNumber: string[];
+	photo?: string;
 	age: number;
 	state: string;
 	township: string;

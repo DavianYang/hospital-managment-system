@@ -122,17 +122,6 @@ export class AdminController {
 	);
 
 	// DELETE
-
-	private delete = async (req: Request, res: Response, next: NextFunction) => {
-		const deactivatedUser = await this.userService.deleteUser(req.user.id);
-		await this.adminService.deleteAdmin(deactivatedUser);
-
-		res.status(204).json({
-			status: 'success',
-			data: null,
-		});
-	};
-
 	public deleteMe = catchAsync(
 		async (req: Request, res: Response, next: NextFunction) => {
 			const deactivatedUser = await this.userService.deleteCurrentUser(

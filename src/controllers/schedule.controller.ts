@@ -60,7 +60,7 @@ export class ScheduleController {
 			const updateSchedule = await this.scheduleService.updateSchedule(
 				req.params.id,
 				req.body,
-				next
+				next,
 			);
 
 			if (!updateSchedule) {

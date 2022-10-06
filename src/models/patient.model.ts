@@ -3,16 +3,20 @@ import { model, Schema, Types } from 'mongoose';
 import validator from 'validator';
 
 const patientSchema = new Schema<PatientDocument>({
-	name: {
+	username: {
 		type: String,
 		required: [true, 'Pleae provid your name.'],
 	},
 	email: {
 		type: String,
-		required: [true, 'A doctor must have a email!'],
+		required: [true, 'A patient must have a email!'],
 		unique: true,
 		lowercase: true,
 		validate: [validator.isEmail, 'Please provide a valid email.'],
+	},
+	photo: {
+		type: String,
+		default: 'patient.jpg',
 	},
 	phoneNumber: [{ type: String }],
 	age: {
