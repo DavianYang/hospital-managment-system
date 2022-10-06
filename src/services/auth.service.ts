@@ -1,17 +1,15 @@
 import ApiError from '@exceptions/api.error';
-import { UserDocument } from '@interfaces/user.interface';
 import * as strings from '@resources/strings';
 import { UserService } from '@services/user.service';
 import { NextFunction, Request, Response } from 'express';
 import jwt from 'jsonwebtoken';
-import { Types } from 'mongoose';
 import ms from 'ms';
 import { config } from '../config';
 
 export class AuthService {
 	private userService = new UserService();
 
-	public signJWTToken = (id: Types.ObjectId) => {
+	public signJWTToken = (id: string) => {
 		const token = jwt.sign({ id }, config.authConfig.jwtOptions.secret, {
 			expiresIn: config.authConfig.jwtOptions.duration,
 		});
@@ -22,9 +20,9 @@ export class AuthService {
 	public generateJWTToken = (
 		req: Request,
 		res: Response,
-		user: UserDocument,
+		userId: string
 	) => {
-		const token = this.signJWTToken(user._id);
+		const token = this.signJWTToken(userId);
 
 		// Save jwt token to cookie and set security and expired date
 		res.cookie('jwt', token, {
@@ -56,7 +54,7 @@ export class AuthService {
 		// Remove password which was from query from output
 		user.password = undefined;
 
-		const token = this.generateJWTToken(req, res, user);
+		const token = this.generateJWTToken(req, res, user._id);
 
 		return {
 			user,
