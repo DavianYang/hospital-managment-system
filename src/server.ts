@@ -1,4 +1,5 @@
 import { AdminRoute } from '@routes/admin.route';
+import { DashboardRoute } from '@routes/dashboard.route';
 import { DoctorRoute } from '@routes/doctor.route';
 import { HospitalRoute } from '@routes/hospital.route';
 import { IndexRoute } from '@routes/index.route';
@@ -21,9 +22,10 @@ const app = new App([
 	new IndexRoute(),
 	new PublicRoute(),
 	new LoginRoute(),
-	new PatientRoute(),
 	new DoctorRoute(),
+	new PatientRoute(),
 	new AdminRoute(),
+	new DashboardRoute(),
 	new ScheduleRoute(),
 	new HospitalRoute(),
 	new RoleRoute(),

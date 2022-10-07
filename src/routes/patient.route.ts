@@ -1,6 +1,5 @@
-import { ROLE_ADMIN_CODE } from '@commons/constant.common';
 import { PatientController } from '@controllers/patient.controller';
-import { protect, restrictTo } from '@middlwares/auth.middleware';
+import { protect } from '@middlwares/auth.middleware';
 import { upload } from '@middlwares/image.middleware';
 import { resizeUserImage } from '@middlwares/user.middleware';
 import { Router } from 'express';
@@ -32,18 +31,5 @@ export class PatientRoute {
 		this.router
 			.route(`${this.path}/me/appointments`)
 			.post(this.patientController.createPatientAppointment);
-
-		this.router.use(restrictTo(ROLE_ADMIN_CODE));
-
-		this.router
-			.route(`${this.path}/`)
-			.get(this.patientController.getAllPatients)
-			.post(this.patientController.createPatient);
-
-		this.router
-			.route(`${this.path}/:id`)
-			.get(this.patientController.getPatient)
-			.patch(this.patientController.updatePatient)
-			.delete(this.patientController.deletePatient);
 	}
 }

@@ -45,7 +45,7 @@ export class DoctorService {
 			feesPerSession,
 			phoneNumber,
 			photo,
-			user: doctorUser._id,
+			user: doctorUser._id
 		});
 	}
 

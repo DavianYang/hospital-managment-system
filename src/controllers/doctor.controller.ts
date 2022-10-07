@@ -103,6 +103,7 @@ export class DoctorController {
 
 	// CREATE
 	public createDoctor = catchAsync(async (req: Request, res: Response) => {
+		console.log('hlleox')
 		const createdDoctor = await this.doctorService.createDoctor(req.body);
 
 		res.status(200).json({

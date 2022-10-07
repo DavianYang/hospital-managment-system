@@ -48,8 +48,6 @@ const doctorSchema = new Schema<DoctorDocument>({
 	]
 });
 
-doctorSchema.index({ hospitals: 1 }, { unique: true });
-
 doctorSchema.pre<Query<DoctorDocument, DoctorDocument>>(
 	/^find/,
 	function (next: (err?: Error) => void) {
