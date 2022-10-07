@@ -1,4 +1,5 @@
 import { FilterQuery } from 'mongoose';
+
 import { QueryString } from '@interfaces/query.interface';
 
 class APIFeatures<Q> {

@@ -1,3 +1,5 @@
+import { NextFunction } from 'express';
+
 import ApiError from '@exceptions/api.error';
 import { Hospital } from '@interfaces/hospital.interface';
 import { QueryString } from '@interfaces/query.interface';
@@ -10,7 +12,7 @@ import {
 	findOne,
 	updateOne,
 } from '@services/factory.service';
-import { NextFunction } from 'express';
+
 import { DoctorService } from './doctor.service';
 
 export class HospitalService {

@@ -1,5 +1,6 @@
-import { RoleDocument, RoleModel } from '@interfaces/role.interface';
 import { model, Schema } from 'mongoose';
+
+import { RoleDocument, RoleModel } from '@interfaces/role.interface';
 
 const roleSchema = new Schema<RoleDocument>({
 	code: {

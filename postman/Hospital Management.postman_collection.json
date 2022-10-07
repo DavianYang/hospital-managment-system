@@ -25,12 +25,8 @@
 						},
 						"url": {
 							"raw": "{{URL}}admins/login",
-							"host": [
-								"{{URL}}admins"
-							],
-							"path": [
-								"login"
-							]
+							"host": ["{{URL}}admins"],
+							"path": ["login"]
 						}
 					},
 					"response": []
@@ -52,9 +48,7 @@
 						"header": [],
 						"url": {
 							"raw": "{{URL}}admins",
-							"host": [
-								"{{URL}}admins"
-							]
+							"host": ["{{URL}}admins"]
 						}
 					},
 					"response": []
@@ -85,9 +79,7 @@
 						},
 						"url": {
 							"raw": "{{URL}}admins",
-							"host": [
-								"{{URL}}admins"
-							]
+							"host": ["{{URL}}admins"]
 						}
 					},
 					"response": []
@@ -109,12 +101,8 @@
 						"header": [],
 						"url": {
 							"raw": "{{URL}}admins/me",
-							"host": [
-								"{{URL}}admins"
-							],
-							"path": [
-								"me"
-							]
+							"host": ["{{URL}}admins"],
+							"path": ["me"]
 						}
 					},
 					"response": []
@@ -146,12 +134,8 @@
 						},
 						"url": {
 							"raw": "{{URL}}admins/me",
-							"host": [
-								"{{URL}}admins"
-							],
-							"path": [
-								"me"
-							]
+							"host": ["{{URL}}admins"],
+							"path": ["me"]
 						}
 					},
 					"response": []
@@ -173,12 +157,8 @@
 						"header": [],
 						"url": {
 							"raw": "{{URL}}admins/me",
-							"host": [
-								"{{URL}}admins"
-							],
-							"path": [
-								"me"
-							]
+							"host": ["{{URL}}admins"],
+							"path": ["me"]
 						}
 					},
 					"response": []
@@ -200,12 +180,8 @@
 						"header": [],
 						"url": {
 							"raw": "{{URL}}admins/633fa9f5cb6d777b5fdbe55e",
-							"host": [
-								"{{URL}}admins"
-							],
-							"path": [
-								"633fa9f5cb6d777b5fdbe55e"
-							]
+							"host": ["{{URL}}admins"],
+							"path": ["633fa9f5cb6d777b5fdbe55e"]
 						}
 					},
 					"response": []
@@ -227,12 +203,8 @@
 						"header": [],
 						"url": {
 							"raw": "{{URL}}admins/633faa18cb6d777b5fdbe579",
-							"host": [
-								"{{URL}}admins"
-							],
-							"path": [
-								"633faa18cb6d777b5fdbe579"
-							]
+							"host": ["{{URL}}admins"],
+							"path": ["633faa18cb6d777b5fdbe579"]
 						}
 					},
 					"response": []
@@ -263,12 +235,8 @@
 						},
 						"url": {
 							"raw": "{{URL}}admins/633faa18cb6d777b5fdbe579",
-							"host": [
-								"{{URL}}admins"
-							],
-							"path": [
-								"633faa18cb6d777b5fdbe579"
-							]
+							"host": ["{{URL}}admins"],
+							"path": ["633faa18cb6d777b5fdbe579"]
 						}
 					},
 					"response": []
@@ -290,12 +258,8 @@
 						"header": [],
 						"url": {
 							"raw": "{{URL}}admins/logout",
-							"host": [
-								"{{URL}}admins"
-							],
-							"path": [
-								"logout"
-							]
+							"host": ["{{URL}}admins"],
+							"path": ["logout"]
 						}
 					},
 					"response": []
@@ -316,18 +280,14 @@
 					"listen": "prerequest",
 					"script": {
 						"type": "text/javascript",
-						"exec": [
-							""
-						]
+						"exec": [""]
 					}
 				},
 				{
 					"listen": "test",
 					"script": {
 						"type": "text/javascript",
-						"exec": [
-							""
-						]
+						"exec": [""]
 					}
 				}
 			]
@@ -361,9 +321,7 @@
 						},
 						"url": {
 							"raw": "{{URL}}roles",
-							"host": [
-								"{{URL}}roles"
-							]
+							"host": ["{{URL}}roles"]
 						}
 					},
 					"response": []
@@ -385,9 +343,7 @@
 						"header": [],
 						"url": {
 							"raw": "{{URL}}roles",
-							"host": [
-								"{{URL}}roles"
-							]
+							"host": ["{{URL}}roles"]
 						}
 					},
 					"response": []
@@ -409,12 +365,8 @@
 						"header": [],
 						"url": {
 							"raw": "{{URL}}roles/5c8a1e1a2f8fb814b56fa182",
-							"host": [
-								"{{URL}}roles"
-							],
-							"path": [
-								"5c8a1e1a2f8fb814b56fa182"
-							]
+							"host": ["{{URL}}roles"],
+							"path": ["5c8a1e1a2f8fb814b56fa182"]
 						}
 					},
 					"response": []
@@ -445,12 +397,8 @@
 						},
 						"url": {
 							"raw": "{{URL}}roles/633faac3cb6d777b5fdbe5c3",
-							"host": [
-								"{{URL}}roles"
-							],
-							"path": [
-								"633faac3cb6d777b5fdbe5c3"
-							]
+							"host": ["{{URL}}roles"],
+							"path": ["633faac3cb6d777b5fdbe5c3"]
 						}
 					},
 					"response": []
@@ -472,12 +420,8 @@
 						"header": [],
 						"url": {
 							"raw": "{{URL}}roles/633faac3cb6d777b5fdbe5c3",
-							"host": [
-								"{{URL}}roles"
-							],
-							"path": [
-								"633faac3cb6d777b5fdbe5c3"
-							]
+							"host": ["{{URL}}roles"],
+							"path": ["633faac3cb6d777b5fdbe5c3"]
 						}
 					},
 					"response": []
@@ -509,9 +453,7 @@
 						},
 						"url": {
 							"raw": "{{URL}}doctors",
-							"host": [
-								"{{URL}}doctors"
-							]
+							"host": ["{{URL}}doctors"]
 						}
 					},
 					"response": []
@@ -542,9 +484,7 @@
 						},
 						"url": {
 							"raw": "{{URL}}doctors",
-							"host": [
-								"{{URL}}doctors"
-							]
+							"host": ["{{URL}}doctors"]
 						}
 					},
 					"response": []
@@ -559,12 +499,8 @@
 						"header": [],
 						"url": {
 							"raw": "{{URL}}doctors/633fadadbe273ccf38cafc13",
-							"host": [
-								"{{URL}}doctors"
-							],
-							"path": [
-								"633fadadbe273ccf38cafc13"
-							]
+							"host": ["{{URL}}doctors"],
+							"path": ["633fadadbe273ccf38cafc13"]
 						}
 					},
 					"response": []
@@ -595,12 +531,8 @@
 						},
 						"url": {
 							"raw": "{{URL}}doctors/633fbdf41d5b8f7bf83bb220",
-							"host": [
-								"{{URL}}doctors"
-							],
-							"path": [
-								"633fbdf41d5b8f7bf83bb220"
-							]
+							"host": ["{{URL}}doctors"],
+							"path": ["633fbdf41d5b8f7bf83bb220"]
 						}
 					},
 					"response": []
@@ -622,12 +554,8 @@
 						"header": [],
 						"url": {
 							"raw": "{{URL}}doctors/633fbe051d5b8f7bf83bb22c",
-							"host": [
-								"{{URL}}doctors"
-							],
-							"path": [
-								"633fbe051d5b8f7bf83bb22c"
-							]
+							"host": ["{{URL}}doctors"],
+							"path": ["633fbe051d5b8f7bf83bb22c"]
 						}
 					},
 					"response": []
@@ -648,12 +576,8 @@
 						},
 						"url": {
 							"raw": "{{URL}}doctors/register",
-							"host": [
-								"{{URL}}doctors"
-							],
-							"path": [
-								"register"
-							]
+							"host": ["{{URL}}doctors"],
+							"path": ["register"]
 						}
 					},
 					"response": []
@@ -674,12 +598,8 @@
 						},
 						"url": {
 							"raw": "{{URL}}doctors/login",
-							"host": [
-								"{{URL}}doctors"
-							],
-							"path": [
-								"login"
-							]
+							"host": ["{{URL}}doctors"],
+							"path": ["login"]
 						}
 					},
 					"response": []
@@ -701,12 +621,8 @@
 						"header": [],
 						"url": {
 							"raw": "{{URL}}doctors/me",
-							"host": [
-								"{{URL}}doctors"
-							],
-							"path": [
-								"me"
-							]
+							"host": ["{{URL}}doctors"],
+							"path": ["me"]
 						}
 					},
 					"response": []
@@ -737,12 +653,8 @@
 						},
 						"url": {
 							"raw": "{{URL}}doctors/me",
-							"host": [
-								"{{URL}}doctors"
-							],
-							"path": [
-								"me"
-							]
+							"host": ["{{URL}}doctors"],
+							"path": ["me"]
 						}
 					},
 					"response": []
@@ -764,12 +676,8 @@
 						"header": [],
 						"url": {
 							"raw": "{{URL}}doctors/me",
-							"host": [
-								"{{URL}}doctors"
-							],
-							"path": [
-								"me"
-							]
+							"host": ["{{URL}}doctors"],
+							"path": ["me"]
 						}
 					},
 					"response": []
@@ -781,12 +689,8 @@
 						"header": [],
 						"url": {
 							"raw": "{{URL}}doctors/logout",
-							"host": [
-								"{{URL}}doctors"
-							],
-							"path": [
-								"logout"
-							]
+							"host": ["{{URL}}doctors"],
+							"path": ["logout"]
 						}
 					},
 					"response": []
@@ -813,9 +717,7 @@
 						"header": [],
 						"url": {
 							"raw": "{{URL}}patients",
-							"host": [
-								"{{URL}}patients"
-							]
+							"host": ["{{URL}}patients"]
 						}
 					},
 					"response": []
@@ -836,12 +738,8 @@
 						},
 						"url": {
 							"raw": "{{URL}}patients/register",
-							"host": [
-								"{{URL}}patients"
-							],
-							"path": [
-								"register"
-							]
+							"host": ["{{URL}}patients"],
+							"path": ["register"]
 						}
 					},
 					"response": []
@@ -862,12 +760,8 @@
 						},
 						"url": {
 							"raw": "{{URL}}patients/login",
-							"host": [
-								"{{URL}}patients"
-							],
-							"path": [
-								"login"
-							]
+							"host": ["{{URL}}patients"],
+							"path": ["login"]
 						}
 					},
 					"response": []
@@ -889,12 +783,8 @@
 						"header": [],
 						"url": {
 							"raw": "{{URL}}patients/logout",
-							"host": [
-								"{{URL}}patients"
-							],
-							"path": [
-								"logout"
-							]
+							"host": ["{{URL}}patients"],
+							"path": ["logout"]
 						}
 					},
 					"response": []
@@ -925,12 +815,8 @@
 						},
 						"url": {
 							"raw": "{{URL}}patients/633fc1c53d952a48e6b6bcc3",
-							"host": [
-								"{{URL}}patients"
-							],
-							"path": [
-								"633fc1c53d952a48e6b6bcc3"
-							]
+							"host": ["{{URL}}patients"],
+							"path": ["633fc1c53d952a48e6b6bcc3"]
 						}
 					},
 					"response": []
@@ -962,12 +848,8 @@
 						},
 						"url": {
 							"raw": "{{URL}}patients/me",
-							"host": [
-								"{{URL}}patients"
-							],
-							"path": [
-								"me"
-							]
+							"host": ["{{URL}}patients"],
+							"path": ["me"]
 						}
 					},
 					"response": []
@@ -989,12 +871,8 @@
 						"header": [],
 						"url": {
 							"raw": "{{URL}}patients/633ee297188f6c1cfe8f125c",
-							"host": [
-								"{{URL}}patients"
-							],
-							"path": [
-								"633ee297188f6c1cfe8f125c"
-							]
+							"host": ["{{URL}}patients"],
+							"path": ["633ee297188f6c1cfe8f125c"]
 						}
 					},
 					"response": []
@@ -1016,12 +894,8 @@
 						"header": [],
 						"url": {
 							"raw": "{{URL}}patients/633fc1c53d952a48e6b6bcc3",
-							"host": [
-								"{{URL}}patients"
-							],
-							"path": [
-								"633fc1c53d952a48e6b6bcc3"
-							]
+							"host": ["{{URL}}patients"],
+							"path": ["633fc1c53d952a48e6b6bcc3"]
 						}
 					},
 					"response": []
@@ -1043,12 +917,8 @@
 						"header": [],
 						"url": {
 							"raw": "{{URL}}patients/me",
-							"host": [
-								"{{URL}}patients"
-							],
-							"path": [
-								"me"
-							]
+							"host": ["{{URL}}patients"],
+							"path": ["me"]
 						}
 					},
 					"response": []
@@ -1070,12 +940,8 @@
 						"header": [],
 						"url": {
 							"raw": "{{URL}}patients/me",
-							"host": [
-								"{{URL}}patients"
-							],
-							"path": [
-								"me"
-							]
+							"host": ["{{URL}}patients"],
+							"path": ["me"]
 						}
 					},
 					"response": []
@@ -1111,9 +977,7 @@
 						},
 						"url": {
 							"raw": "{{URL}}hospitals",
-							"host": [
-								"{{URL}}hospitals"
-							]
+							"host": ["{{URL}}hospitals"]
 						}
 					},
 					"response": []
@@ -1128,9 +992,7 @@
 						"header": [],
 						"url": {
 							"raw": "{{URL}}hospitals",
-							"host": [
-								"{{URL}}hospitals"
-							]
+							"host": ["{{URL}}hospitals"]
 						}
 					},
 					"response": []
@@ -1142,12 +1004,8 @@
 						"header": [],
 						"url": {
 							"raw": "{{URL}}hospitals/633fbe2f1d5b8f7bf83bb25b",
-							"host": [
-								"{{URL}}hospitals"
-							],
-							"path": [
-								"633fbe2f1d5b8f7bf83bb25b"
-							]
+							"host": ["{{URL}}hospitals"],
+							"path": ["633fbe2f1d5b8f7bf83bb25b"]
 						}
 					},
 					"response": []
@@ -1178,12 +1036,8 @@
 						},
 						"url": {
 							"raw": "{{URL}}hospitals/633fbe2f1d5b8f7bf83bb25b",
-							"host": [
-								"{{URL}}hospitals"
-							],
-							"path": [
-								"633fbe2f1d5b8f7bf83bb25b"
-							]
+							"host": ["{{URL}}hospitals"],
+							"path": ["633fbe2f1d5b8f7bf83bb25b"]
 						}
 					},
 					"response": []
@@ -1205,12 +1059,8 @@
 						"header": [],
 						"url": {
 							"raw": "{{URL}}hospitals/633fbe2f1d5b8f7bf83bb25b",
-							"host": [
-								"{{URL}}hospitals"
-							],
-							"path": [
-								"633fbe2f1d5b8f7bf83bb25b"
-							]
+							"host": ["{{URL}}hospitals"],
+							"path": ["633fbe2f1d5b8f7bf83bb25b"]
 						}
 					},
 					"response": []
@@ -1227,9 +1077,7 @@
 						"header": [],
 						"url": {
 							"raw": "{{URL}}schedules",
-							"host": [
-								"{{URL}}schedules"
-							]
+							"host": ["{{URL}}schedules"]
 						}
 					},
 					"response": []
@@ -1260,9 +1108,7 @@
 						},
 						"url": {
 							"raw": "{{URL}}schedules",
-							"host": [
-								"{{URL}}schedules"
-							]
+							"host": ["{{URL}}schedules"]
 						}
 					},
 					"response": []
@@ -1274,12 +1120,8 @@
 						"header": [],
 						"url": {
 							"raw": "{{URL}}schedules/633ecbed6fc8b039074e4ca6",
-							"host": [
-								"{{URL}}schedules"
-							],
-							"path": [
-								"633ecbed6fc8b039074e4ca6"
-							]
+							"host": ["{{URL}}schedules"],
+							"path": ["633ecbed6fc8b039074e4ca6"]
 						}
 					},
 					"response": []
@@ -1310,12 +1152,8 @@
 						},
 						"url": {
 							"raw": "{{URL}}schedules/633ecbed6fc8b039074e4ca6",
-							"host": [
-								"{{URL}}schedules"
-							],
-							"path": [
-								"633ecbed6fc8b039074e4ca6"
-							]
+							"host": ["{{URL}}schedules"],
+							"path": ["633ecbed6fc8b039074e4ca6"]
 						}
 					},
 					"response": []
@@ -1337,12 +1175,8 @@
 						"header": [],
 						"url": {
 							"raw": "{{URL}}schedules/633ecbed6fc8b039074e4ca6",
-							"host": [
-								"{{URL}}schedules"
-							],
-							"path": [
-								"633ecbed6fc8b039074e4ca6"
-							]
+							"host": ["{{URL}}schedules"],
+							"path": ["633ecbed6fc8b039074e4ca6"]
 						}
 					},
 					"response": []
@@ -1378,13 +1212,8 @@
 						},
 						"url": {
 							"raw": "{{URL}}patients/me/appointments",
-							"host": [
-								"{{URL}}patients"
-							],
-							"path": [
-								"me",
-								"appointments"
-							]
+							"host": ["{{URL}}patients"],
+							"path": ["me", "appointments"]
 						}
 					},
 					"response": []
@@ -1420,13 +1249,8 @@
 						},
 						"url": {
 							"raw": "{{URL}}hospitals/633fbe251d5b8f7bf83bb243/doctor",
-							"host": [
-								"{{URL}}hospitals"
-							],
-							"path": [
-								"633fbe251d5b8f7bf83bb243",
-								"doctor"
-							]
+							"host": ["{{URL}}hospitals"],
+							"path": ["633fbe251d5b8f7bf83bb243", "doctor"]
 						}
 					},
 					"response": []
@@ -1439,18 +1263,14 @@
 			"listen": "prerequest",
 			"script": {
 				"type": "text/javascript",
-				"exec": [
-					""
-				]
+				"exec": [""]
 			}
 		},
 		{
 			"listen": "test",
 			"script": {
 				"type": "text/javascript",
-				"exec": [
-					""
-				]
+				"exec": [""]
 			}
 		}
 	],

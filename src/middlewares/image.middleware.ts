@@ -1,5 +1,6 @@
 import { Request } from 'express';
 import multer from 'multer';
+
 import ApiError from '@exceptions/api.error';
 import { FileFilterCallback } from '@interfaces/image.interface';
 

@@ -1,9 +1,10 @@
+import { NextFunction, Request, Response } from 'express';
+
 import ApiError from '@exceptions/api.error';
 import * as strings from '@resources/strings';
 import { AdminService } from '@services/admin.service';
 import { UserService } from '@services/user.service';
 import catchAsync from '@utils/catch-async';
-import { NextFunction, Request, Response } from 'express';
 
 export class AdminController {
 	private userService = new UserService();
@@ -35,7 +36,9 @@ export class AdminController {
 				return next(new ApiError(strings.USER_WITH_ID_NOT_FOUND, 404));
 			}
 
-			const admin = await this.adminService.findAdminByUserId(adminUser._id.toString());
+			const admin = await this.adminService.findAdminByUserId(
+				adminUser._id.toString(),
+			);
 
 			if (!admin) {
 				return next(new ApiError(strings.USER_WITH_ID_NOT_FOUND, 404));

@@ -1,5 +1,6 @@
-import { Request, Response, NextFunction } from 'express';
+import { NextFunction, Request, Response } from 'express';
 import sharp from 'sharp';
+
 import catchAsync from '@utils/catch-async';
 
 const resizeUserImage = catchAsync(

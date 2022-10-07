@@ -1,8 +1,9 @@
+import { NextFunction, Request, Response } from 'express';
+
 import ApiError from '@exceptions/api.error';
 import * as strings from '@resources/strings';
 import { HospitalService } from '@services/hospital.service';
 import catchAsync from '@utils/catch-async';
-import { NextFunction, Request, Response } from 'express';
 
 export class HospitalController {
 	private hospitalService = new HospitalService();

@@ -1,6 +1,7 @@
-import { DoctorDocument, DoctorModel } from '@interfaces/doctor.interface';
 import { model, Query, Schema, Types } from 'mongoose';
 import validator from 'validator';
+
+import { DoctorDocument, DoctorModel } from '@interfaces/doctor.interface';
 
 const doctorSchema = new Schema<DoctorDocument>({
 	username: {
@@ -45,7 +46,7 @@ const doctorSchema = new Schema<DoctorDocument>({
 			type: Types.ObjectId,
 			ref: 'Hospital',
 		},
-	]
+	],
 });
 
 doctorSchema.pre<Query<DoctorDocument, DoctorDocument>>(

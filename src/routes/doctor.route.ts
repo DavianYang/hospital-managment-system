@@ -1,8 +1,9 @@
+import { Router } from 'express';
+
 import { DoctorController } from '@controllers/doctor.controller';
 import { protect } from '@middlwares/auth.middleware';
 import { upload } from '@middlwares/image.middleware';
 import { resizeUserImage } from '@middlwares/user.middleware';
-import { Router } from 'express';
 
 export class DoctorRoute {
 	public path = '/doctors';

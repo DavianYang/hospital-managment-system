@@ -18,7 +18,7 @@ export interface DoctorBaseDocument extends Doctor, Document {
 
 export interface DoctorDocument extends DoctorBaseDocument {
 	user: UserBaseDocument['_id'];
-	hospitals?: Types.Array<HospitalBaseDocument['_id']>
+	hospitals?: Types.Array<HospitalBaseDocument['_id']>;
 }
 
 export type DoctorModel = Model<DoctorDocument>;

@@ -1,11 +1,12 @@
+import { NextFunction, Request, Response } from 'express';
+import jwt from 'jsonwebtoken';
+
 import ApiError from '@exceptions/api.error';
 import { DataStoredInToken } from '@interfaces/auth.interface';
 import { roleModel } from '@models/role.model';
 import { userModel } from '@models/user.model';
 import * as strings from '@resources/strings';
 import catchAsync from '@utils/catch-async';
-import { NextFunction, Request, Response } from 'express';
-import jwt from 'jsonwebtoken';
 
 export const protect = catchAsync(
 	async (req: Request, res: Response, next: NextFunction) => {

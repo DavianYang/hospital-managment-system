@@ -5,9 +5,10 @@ import {
 	deleteOne,
 	findAll,
 	findOne,
-	updateOne
+	updateOne,
 } from '@services/factory.service';
 import { filteredObj } from '@utils/filter-obj';
+
 import { UserService } from './user.service';
 
 export class AdminService {

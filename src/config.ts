@@ -1,4 +1,5 @@
 const dotenv = require('dotenv');
+
 import * as strings from '@resources/strings';
 
 dotenv.config({

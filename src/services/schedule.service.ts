@@ -1,3 +1,6 @@
+import { NextFunction } from 'express';
+import moment from 'moment';
+
 import ApiError from '@exceptions/api.error';
 import { QueryString } from '@interfaces/query.interface';
 import { scheduleModel } from '@models/schedule.model';
@@ -6,10 +9,9 @@ import {
 	deleteOne,
 	findAll,
 	findOne,
-	updateOne
+	updateOne,
 } from '@services/factory.service';
-import { NextFunction } from 'express';
-import moment from 'moment';
+
 import { DoctorService } from './doctor.service';
 import { HospitalService } from './hospital.service';
 

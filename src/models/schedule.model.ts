@@ -1,12 +1,13 @@
+import moment from 'moment';
+import { model, Schema, Types } from 'mongoose';
+
 import ApiError from '@exceptions/api.error';
 import {
 	ScheduleDocument,
-	ScheduleModel
+	ScheduleModel,
 } from '@interfaces/schedule.interface';
 import * as strings from '@resources/strings';
 import { isNegative } from '@utils/shared.util';
-import moment from 'moment';
-import { model, Schema, Types } from 'mongoose';
 
 const scheduleSchema = new Schema<ScheduleDocument>({
 	date: {

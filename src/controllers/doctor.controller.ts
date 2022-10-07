@@ -1,10 +1,11 @@
+import { NextFunction, Request, Response } from 'express';
+
 import ApiError from '@exceptions/api.error';
 import * as strings from '@resources/strings';
 import { AuthService } from '@services/auth.service';
 import { DoctorService } from '@services/doctor.service';
 import { UserService } from '@services/user.service';
 import catchAsync from '@utils/catch-async';
-import { NextFunction, Request, Response } from 'express';
 
 export class DoctorController {
 	private userService = new UserService();

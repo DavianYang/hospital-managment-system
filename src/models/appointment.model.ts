@@ -1,8 +1,10 @@
+import { model, Model, Schema, Types } from 'mongoose';
+
 import {
 	AppointmentDocument,
-	AppointmentModel
+	AppointmentModel,
 } from '@interfaces/appointment.interface';
-import { model, Model, Schema, Types } from 'mongoose';
+
 import { scheduleModel } from './schedule.model';
 
 const appointmentSchema = new Schema<AppointmentDocument>({

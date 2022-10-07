@@ -1,7 +1,9 @@
-import { AuthService } from '@services/auth.service';
-import catchAsync from '@utils/catch-async';
 import { NextFunction, Request, Response } from 'express';
 import ms from 'ms';
+
+import { AuthService } from '@services/auth.service';
+import catchAsync from '@utils/catch-async';
+
 import { config } from '../config';
 
 export class AuthController {

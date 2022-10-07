@@ -1,3 +1,5 @@
+import { NextFunction } from 'express';
+
 import ApiError from '@exceptions/api.error';
 import { filterObj, QueryString } from '@interfaces/query.interface';
 import { UserDocument } from '@interfaces/user.interface';
@@ -10,7 +12,7 @@ import {
 	updateOne,
 } from '@services/factory.service';
 import { filteredObj } from '@utils/filter-obj';
-import { NextFunction } from 'express';
+
 import { UserService } from './user.service';
 
 export class PatientService {

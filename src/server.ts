@@ -8,6 +8,7 @@ import { PatientRoute } from '@routes/patient.route';
 import { PublicRoute } from '@routes/public.route';
 import { RoleRoute } from '@routes/role.route';
 import { ScheduleRoute } from '@routes/schedule.route';
+
 import { logger } from '@utils/logger';
 import App from './app';
 

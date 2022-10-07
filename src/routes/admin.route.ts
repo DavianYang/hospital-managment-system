@@ -1,9 +1,10 @@
+import { Router } from 'express';
+
 import { ROLE_ADMIN_CODE } from '@commons/constant.common';
 import { AdminController } from '@controllers/admin.controller';
 import { protect, restrictTo } from '@middlwares/auth.middleware';
 import { upload } from '@middlwares/image.middleware';
 import { resizeUserImage } from '@middlwares/user.middleware';
-import { Router } from 'express';
 
 export class AdminRoute {
 	public path = '/admins';

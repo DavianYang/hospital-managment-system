@@ -1,6 +1,7 @@
-import { AdminDocument, AdminModel } from '@interfaces/admin.interface';
 import { model, Query, Schema, Types } from 'mongoose';
 import validator from 'validator';
+
+import { AdminDocument, AdminModel } from '@interfaces/admin.interface';
 
 const adminSchema = new Schema<AdminDocument>({
 	email: {

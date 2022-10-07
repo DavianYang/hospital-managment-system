@@ -1,3 +1,5 @@
+import { NextFunction } from 'express';
+
 import ApiError from '@exceptions/api.error';
 import { filterObj, QueryString } from '@interfaces/query.interface';
 import { UserDocument } from '@interfaces/user.interface';
@@ -7,10 +9,10 @@ import {
 	deleteOne,
 	findAll,
 	findOne,
-	updateOne
+	updateOne,
 } from '@services/factory.service';
 import { filteredObj } from '@utils/filter-obj';
-import { NextFunction } from 'express';
+
 import { UserService } from './user.service';
 
 export class DoctorService {
@@ -45,7 +47,7 @@ export class DoctorService {
 			feesPerSession,
 			phoneNumber,
 			photo,
-			user: doctorUser._id
+			user: doctorUser._id,
 		});
 	}
 
@@ -77,7 +79,7 @@ export class DoctorService {
 	}
 
 	public findDoctorByUserId = async (userId: string, next: NextFunction) => {
-		return await this.doctors.findOne({ user: userId});
+		return await this.doctors.findOne({ user: userId });
 	};
 
 	// UPDATE

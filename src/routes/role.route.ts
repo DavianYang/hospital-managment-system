@@ -1,7 +1,8 @@
+import { Router } from 'express';
+
 import { ROLE_ADMIN_CODE } from '@commons/constant.common';
 import { RoleController } from '@controllers/role.controller';
 import { protect, restrictTo } from '@middlwares/auth.middleware';
-import { Router } from 'express';
 
 export class RoleRoute {
 	public path = '/roles';

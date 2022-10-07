@@ -1,7 +1,9 @@
+import { Router } from 'express';
+
 import { DoctorController } from '@controllers/doctor.controller';
 import { HospitalController } from '@controllers/hospital.controller';
 import { ScheduleController } from '@controllers/schedule.controller';
-import { Router } from 'express';
+
 import { DoctorRoute } from './doctor.route';
 import { HospitalRoute } from './hospital.route';
 import { ScheduleRoute } from './schedule.route';

@@ -1,6 +1,7 @@
 # Hospital Management System
 
 ## Required tools for Development
+
 - [VSCode](https://code.visualstudio.com/)
 - [Node.js v16](https://nodejs.org/en/)
 - [npm](https://www.npmjs.com/) or [pnpm](https://pnpm.io/) (preferably)
@@ -21,7 +22,8 @@ pnpm i
 
 ### Configure Environment
 
-Please enter your development environment config by rename `.env.dev.example` `.env.dev` 
+Please enter your development environment config by rename `.env.dev.example`
+`.env.dev`
 
 ### Running in development
 
@@ -75,7 +77,7 @@ Prefix API - `/api/v1`
 - [x] `GET`: `/patients/me`
 - [x] `PATCH`: `/patients/me`
 - [x] `DELETE`: `/patients/me`
-- [ ] `GET`: `/patients/me/appointments` 
+- [ ] `GET`: `/patients/me/appointments`
 - [x] `POST`: `/patients/me/appointments`
 - [ ] `DELETE`: `/patients/me/appointments`
 
@@ -98,11 +100,15 @@ Prefix API - `/api/v1`
 
 ## In case of Future Development
 
-- [ ] Update the type of input service body (current defined as `any`)
-- [ ] Check open and closed hour of hospital when adding schedules
-- [ ] Cancel Appointment
-- [ ] Patients can check their appointment
-- [ ] Doctors can check their schedules
+- [ ] Update the `type` of input service body (current defined as `any`)
+- [ ] Check open and closed hour of hospital when adding `schedules`
+- [ ] Cancel `Appointment`
+- [ ] `Patients` can check their appointment
+- [ ] `Doctors` can check their schedules
 - [ ] Transaction required in routes
-- [ ] Caculate approximate countdown time 
-- [ ] Able to publicly view single doctor by ID
+- [ ] Caculate approximate countdown time
+- [ ] Able to publicly view single `doctor` by ID
+- [ ] Create `ROLE_SUPER_ADMIN` for root `superuser`
+- [ ] Create staff related to hospital such as `receptionist`, `nurses`,
+      `departmentHeads`
+- [ ] Able to guest checkout for `patients` when posting `appointments`

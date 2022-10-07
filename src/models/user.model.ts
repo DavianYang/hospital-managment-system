@@ -1,12 +1,13 @@
+import bcrypt from 'bcryptjs';
+import crypto from 'crypto';
+import { model, Query, Schema, Types } from 'mongoose';
+import validator from 'validator';
+
 import {
 	UserBaseDocument,
 	UserDocument,
 	UserModel,
 } from '@interfaces/user.interface';
-import bcrypt from 'bcryptjs';
-import crypto from 'crypto';
-import { model, Query, Schema, Types } from 'mongoose';
-import validator from 'validator';
 
 const userSchema = new Schema<UserDocument>({
 	email: {

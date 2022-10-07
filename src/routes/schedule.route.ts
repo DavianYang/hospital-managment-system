@@ -1,7 +1,8 @@
+import { Router } from 'express';
+
 import { ROLE_ADMIN_CODE } from '@commons/constant.common';
 import { ScheduleController } from '@controllers/schedule.controller';
 import { protect, restrictTo } from '@middlwares/auth.middleware';
-import { Router } from 'express';
 
 export class ScheduleRoute {
 	public path = '/schedules';

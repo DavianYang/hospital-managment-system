@@ -1,8 +1,9 @@
+import { model, Schema, Types } from 'mongoose';
+
 import {
 	HospitalDocument,
-	HospitalModel
+	HospitalModel,
 } from '@interfaces/hospital.interface';
-import { model, Schema, Types } from 'mongoose';
 
 const hospitalSchema = new Schema<HospitalDocument>({
 	name: {

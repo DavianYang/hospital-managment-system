@@ -1,15 +1,16 @@
+import { NextFunction, Request, Response } from 'express';
 import { STATUS_CODES } from 'http';
-import { NextFunction, Response, Request } from 'express';
 import mongoose from 'mongoose';
+
 import ApiError from '@exceptions/api.error';
 import {
 	CastError,
-	ValidationError,
-	MongoError,
 	ErrorEventsInter,
+	MongoError,
+	ValidationError,
 } from '@interfaces/error.interface';
-import { logger } from '@utils/logger';
 import * as strings from '@resources/strings';
+import { logger } from '@utils/logger';
 
 const handleCastErrorDB = (err: CastError) => {
 	const message = `Invalid ${err.path}: ${err.value}.`;

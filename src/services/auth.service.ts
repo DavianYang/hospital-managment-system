@@ -1,9 +1,11 @@
+import jwt from 'jsonwebtoken';
+import ms from 'ms';
+
 import ApiError from '@exceptions/api.error';
 import * as strings from '@resources/strings';
 import { UserService } from '@services/user.service';
 import { NextFunction, Request, Response } from 'express';
-import jwt from 'jsonwebtoken';
-import ms from 'ms';
+
 import { config } from '../config';
 
 export class AuthService {

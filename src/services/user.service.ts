@@ -1,7 +1,9 @@
+import { ObjectId } from 'mongodb';
+
 import {
 	ROLE_ADMIN_CODE,
 	ROLE_DOCTOR_CODE,
-	ROLE_PATIENT_CODE
+	ROLE_PATIENT_CODE,
 } from '@commons/constant.common';
 import { QueryString } from '@interfaces/query.interface';
 import { userModel } from '@models/user.model';
@@ -9,9 +11,9 @@ import {
 	deleteOne,
 	findAll,
 	findOne,
-	updateOne
+	updateOne,
 } from '@services/factory.service';
-import { ObjectId } from 'mongodb';
+
 import { RoleService } from './role.service';
 
 export class UserService {

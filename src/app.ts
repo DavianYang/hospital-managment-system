@@ -14,7 +14,8 @@ import Route from '@interfaces/route.interface';
 import { errorConverter, errorHandler } from '@middlwares/error.middleware';
 import { importInitData } from '@utils/import-init-data';
 import { logger, stream } from '@utils/logger';
-import { config } from 'config';
+
+import { config } from './config';
 
 class App {
 	public app: express.Application;

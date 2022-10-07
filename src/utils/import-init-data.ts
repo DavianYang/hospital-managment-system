@@ -9,7 +9,8 @@ import {
 import { adminModel } from '@models/admin.model';
 import { roleModel } from '@models/role.model';
 import { userModel } from '@models/user.model';
-import { config } from 'config';
+
+import { config } from '../config';
 import { logger } from './logger';
 
 const roles = [

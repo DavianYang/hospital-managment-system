@@ -1,3 +1,5 @@
+import { NextFunction } from 'express';
+
 import ApiError from '@exceptions/api.error';
 import { QueryString } from '@interfaces/query.interface';
 import { appointmentModel } from '@models/appointment.model';
@@ -7,9 +9,9 @@ import {
 	deleteOne,
 	findAll,
 	findOne,
-	updateOne
+	updateOne,
 } from '@services/factory.service';
-import { NextFunction } from 'express';
+
 import { PatientService } from './patient.service';
 import { ScheduleService } from './schedule.service';
 
@@ -59,8 +61,14 @@ export class AppointmentService {
 	public findAppointment = async (id: string) =>
 		await findOne(this.appointments, id);
 
-	public checkIfAppointmentAlreadyBooked = async (scheduleId: string, patientId: string) => {
-		return await this.appointments.findOne({ schedule: scheduleId, patient: patientId });
+	public checkIfAppointmentAlreadyBooked = async (
+		scheduleId: string,
+		patientId: string,
+	) => {
+		return await this.appointments.findOne({
+			schedule: scheduleId,
+			patient: patientId,
+		});
 	};
 
 	// UPDATE
