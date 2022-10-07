@@ -1,6 +1,6 @@
 import {
 	AppointmentDocument,
-	AppointmentModel,
+	AppointmentModel
 } from '@interfaces/appointment.interface';
 import { model, Model, Schema, Types } from 'mongoose';
 import { scheduleModel } from './schedule.model';
@@ -38,13 +38,14 @@ appointmentSchema.pre<AppointmentDocument>(
 
 		const schedule = await scheduleModel.findById(this.schedule);
 
-		this.token = stats.length > 0 && stats[0].nPatients;
+		const nPatients = stats.length > 0 && stats[0].nPatients + 1;
+		this.token = nPatients || 1;
 
 		await scheduleModel.findByIdAndUpdate(schedule._id, {
-			nPatients: stats.length > 0 && stats[0].nPatients,
-			approxConsultTimeByMin:
+			nPatients: nPatients || 1,
+			approxConsultTimeByMinPerPatient:
 				stats.length > 0 &&
-				Math.round((schedule.duration * 60) / stats[0].nPatients),
+				Math.round((schedule.durationByHour * 60) / nPatients),
 		});
 	},
 );

@@ -12,7 +12,6 @@ export class DoctorController {
 	private doctorService = new DoctorService();
 
 	public getMe = (req: Request, res: Response, next: NextFunction) => {
-		console.log('Helo')
 		req.params.id = req.user.id;
 		next();
 	};
@@ -57,14 +56,11 @@ export class DoctorController {
 
 	public getCurrentDoctor = catchAsync(
 		async (req: Request, res: Response, next: NextFunction) => {
-			console.log('Hello')
 			const doctorUser = await this.userService.findUserById(req.params.id);
 
 			if (!doctorUser) {
 				return next(new ApiError(strings.USER_WITH_ID_NOT_FOUND, 404));
 			}
-			console.log('---------------')
-			console.log(doctorUser)
 
 			const doctor = await this.doctorService.findDoctorByUserId(
 				doctorUser._id.toString(),
@@ -103,7 +99,6 @@ export class DoctorController {
 
 	// CREATE
 	public createDoctor = catchAsync(async (req: Request, res: Response) => {
-		console.log('hlleox')
 		const createdDoctor = await this.doctorService.createDoctor(req.body);
 
 		res.status(200).json({

@@ -1,6 +1,6 @@
 # Hospital Management System
 
-## Current Route
+## Available Routes
 
 Prefix API - `/api/v1`
 
@@ -44,6 +44,7 @@ Prefix API - `/api/v1`
 - [x] `GET`: `/patients/me`
 - [x] `PATCH`: `/patients/me`
 - [x] `DELETE`: `/patients/me`
+- [x] `POST`: `/patients/me/appointments`
 
 ### Hospital
 
@@ -52,7 +53,15 @@ Prefix API - `/api/v1`
 - [x] `GET`: `/hospitals/:id`
 - [x] `PATCH`: `/hospitals/:id`
 - [x] `DELETE`: `/hospitals/:id`
-- [x] `POST`: `/hospitals/:id/doctor` 
+- [x] `POST`: `/hospitals/:id/doctor`
+
+### Schedule
+
+- [x] `GET`: `/schedules`
+- [x] `POST`: `/schedules`
+- [x] `GET`: `/schedules/:id`
+- [x] `PATCH`: `/schedules/:id`
+- [x] `DELETE`: `/schedules/:id`
 
 ## Todo
 

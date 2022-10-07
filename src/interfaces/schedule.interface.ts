@@ -9,9 +9,9 @@ export interface Schedule {
 }
 
 export interface ScheduleBaseDocument extends Schedule, Document {
-	duration: number;
 	nPatients: number;
-	approxConsultTimeByMin: number;
+	durationByHour: number;
+	approxConsultTimeByMinPerPatient: number;
 }
 
 export interface ScheduleDocument extends ScheduleBaseDocument {

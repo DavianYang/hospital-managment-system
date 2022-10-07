@@ -36,8 +36,6 @@ export const protect = catchAsync(
 
 		const currentRole = await roleModel.findById(currentUser.role._id);
 
-		console.log(currentUser)
-
 		req.user = currentUser;
 		req.role = currentRole;
 		res.locals.user = currentUser;
@@ -48,7 +46,6 @@ export const protect = catchAsync(
 
 export const restrictTo = (...roles: string[]) => {
 	return (req: Request, res: Response, next: NextFunction) => {
-		console.log(req.role.code);
 		if (!roles.includes(req.role.code)) {
 			return next(new ApiError(strings.DONT_HAVE_PERMISSION, 403));
 		}

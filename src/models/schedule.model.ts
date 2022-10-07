@@ -23,9 +23,9 @@ const scheduleSchema = new Schema<ScheduleDocument>({
 		unique: true,
 		required: [true, 'A schedule must have a endTime'],
 	},
-	duration: Number,
 	nPatients: Number,
-	approxConsultTimeByMin: Number,
+	durationByHour: Number,
+	approxConsultTimeByMinPerPatient: Number,
 	doctor: {
 		type: Types.ObjectId,
 		ref: 'Doctor',
@@ -41,7 +41,7 @@ const scheduleSchema = new Schema<ScheduleDocument>({
 scheduleSchema.pre<ScheduleDocument>(
 	'save',
 	function (next: (err?: Error) => void) {
-		this.duration = Number(
+		this.durationByHour = Number(
 			moment
 				.duration(
 					moment(this.endTime as number).diff(moment(this.startTime as number)),
@@ -49,7 +49,7 @@ scheduleSchema.pre<ScheduleDocument>(
 				.asHours(),
 		);
 
-		if (isNegative(this.duration)) {
+		if (isNegative(this.durationByHour)) {
 			return next(new ApiError(strings.INVALID_STARTTIME_AND_ENDTIME, 400));
 		}
 

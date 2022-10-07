@@ -7,7 +7,7 @@ import {
 	deleteOne,
 	findAll,
 	findOne,
-	updateOne,
+	updateOne
 } from '@services/factory.service';
 import { NextFunction } from 'express';
 import { PatientService } from './patient.service';
@@ -32,7 +32,7 @@ export class AppointmentService {
 			return next(new ApiError(strings.PATIENT_WITH_ID_NOT_FOUND, 400));
 		}
 
-		if (await this.checkIfAppointmentAlreadyBooked(scheduleId)) {
+		if (await this.checkIfAppointmentAlreadyBooked(scheduleId, patient._id)) {
 			return next(new ApiError(strings.APPOINTMENT_ALREADY_SCHEDULED, 400));
 		}
 
@@ -59,8 +59,8 @@ export class AppointmentService {
 	public findAppointment = async (id: string) =>
 		await findOne(this.appointments, id);
 
-	public checkIfAppointmentAlreadyBooked = async (scheduleId: string) => {
-		return await this.appointments.findOne({ schedule: scheduleId });
+	public checkIfAppointmentAlreadyBooked = async (scheduleId: string, patientId: string) => {
+		return await this.appointments.findOne({ schedule: scheduleId, patient: patientId });
 	};
 
 	// UPDATE
