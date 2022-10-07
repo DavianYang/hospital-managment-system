@@ -96,7 +96,7 @@ Prefix API - `/api/v1`
 - [x] `PATCH`: `/schedules/:id`
 - [x] `DELETE`: `/schedules/:id`
 
-## Todo
+## In case of Future Development
 
 - [ ] Update the type of input service body (current defined as `any`)
 - [ ] Check open and closed hour of hospital when adding schedules
