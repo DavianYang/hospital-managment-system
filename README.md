@@ -1,5 +1,34 @@
 # Hospital Management System
 
+## Required tools for Development
+- [VSCode](https://code.visualstudio.com/)
+- [Node.js v16](https://nodejs.org/en/)
+- [npm](https://www.npmjs.com/) or [pnpm](https://pnpm.io/) (preferably)
+
+## Project Setup
+
+#### Git Clone the repository
+
+```
+git clone https://github.com/DavianYang/hospital-managment-system.git
+```
+
+#### Installing Dependency
+
+```
+pnpm i
+```
+
+#### Configure Environment
+
+Please enter your development environment config by rename `.env.dev.example` `.env.dev` 
+
+#### Running in development
+
+```
+pnpm dev
+```
+
 ## Available Routes
 
 Prefix API - `/api/v1`
@@ -27,9 +56,11 @@ Prefix API - `/api/v1`
 - [x] `GET`: `/doctors/:id`
 - [x] `PATCH`: `/doctors/:id`
 - [x] `DELETE`: `/doctors/:id`
-- [ ] `GET`: `/doctors/me`
-- [ ] `PATCH`: `/doctors/me`
-- [ ] `DELETE`: `/doctors/me`
+- [x] `GET`: `/doctors/me`
+- [x] `PATCH`: `/doctors/me`
+- [x] `DELETE`: `/doctors/me`
+- [ ] `GET`: `/doctors/schedules`
+- [ ] `DELETE`: `/doctors/schedules`
 
 ### Patient
 
@@ -44,7 +75,9 @@ Prefix API - `/api/v1`
 - [x] `GET`: `/patients/me`
 - [x] `PATCH`: `/patients/me`
 - [x] `DELETE`: `/patients/me`
+- [ ] `GET`: `/patients/me/appointments` 
 - [x] `POST`: `/patients/me/appointments`
+- [ ] `DELETE`: `/patients/me/appointments`
 
 ### Hospital
 
@@ -71,4 +104,5 @@ Prefix API - `/api/v1`
 - [ ] Patients can check their appointment
 - [ ] Doctors can check their schedules
 - [ ] Transaction required in routes
-- [ ] Caculate Approximate Countdown time 
+- [ ] Caculate approximate countdown time 
+- [ ] Able to publicly view single doctor by ID
