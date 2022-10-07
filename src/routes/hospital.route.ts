@@ -20,12 +20,12 @@ export class HospitalRoute {
 			.post(this.hospitalController.createHospital);
 
 		this.router
+			.route(`${this.path}/:id/doctor`)
+			.post(this.hospitalController.addDocotor);
+
+		this.router
 			.route(`${this.path}/:id`)
 			.patch(this.hospitalController.updateHospital)
 			.delete(this.hospitalController.deleteHospital);
-
-		this.router
-			.route(`${this.path}/:id/doctor`)
-			.post(this.hospitalController.addDocotor);
 	}
 }

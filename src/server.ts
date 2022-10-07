@@ -23,9 +23,9 @@ const app = new App([
 	new LoginRoute(),
 	new PatientRoute(),
 	new DoctorRoute(),
+	new AdminRoute(),
 	new ScheduleRoute(),
 	new HospitalRoute(),
-	new AdminRoute(),
 	new RoleRoute(),
 ]);
 

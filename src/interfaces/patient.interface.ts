@@ -1,5 +1,4 @@
-import { Document, Model, Types } from 'mongoose';
-import { AppointmentBaseDocument } from './appointment.interface';
+import { Document, Model } from 'mongoose';
 import { UserBaseDocument } from './user.interface';
 
 enum Gender {
@@ -25,7 +24,6 @@ export interface PatientBaseDocument extends Patient, Document {
 
 export interface PatientDocument extends PatientBaseDocument {
 	user: UserBaseDocument['_id'];
-	appointments: Types.Array<AppointmentBaseDocument['_id']>;
 }
 
 export type PatientModel = Model<PatientDocument>;

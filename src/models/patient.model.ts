@@ -45,12 +45,6 @@ const patientSchema = new Schema<PatientDocument>({
 		type: Types.ObjectId,
 		ref: 'User',
 	},
-	appointments: [
-		{
-			type: Types.ObjectId,
-			ref: 'Appointment',
-		},
-	],
 });
 
 export const patientModel = model<PatientDocument, PatientModel>(

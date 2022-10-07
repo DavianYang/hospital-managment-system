@@ -7,6 +7,7 @@ export const YOUR_PASSWORD_RESET_TOKEN =
 // NOT FOUND
 export const USER_WITH_ID_NOT_FOUND = 'No user found with that ID.';
 export const ROLE_WITH_ID_NOT_FOUND = 'No role found with that ID.';
+export const PATIENT_WITH_ID_NOT_FOUND = 'No patient found with that ID.';
 export const DOCTOR_WITH_ID_NOT_FOUND = 'No doctor found with that ID.';
 export const HOSPITAL_WITH_ID_NOT_FOUND = 'No hospital found with that ID.';
 export const SCHEDULE_WITH_ID_NOT_FOUND = 'No schedule found with that ID.';
@@ -54,3 +55,11 @@ export const NOT_LOGGED_IN =
 // ALREADY TAKEN
 export const EMAIL_ALREADY_TAKEN =
 	'This email has already taken! Please try to sign up with another email address.';
+
+export const APPOINTMENT_ALREADY_SCHEDULED =
+	'You have already booked for this schedule!';
+export const DOCTOR_ALREADY_EXIST =
+	'The doctor is already assigned to this hospital.';
+
+export const HOSPITAL_ALREADY_EXIST =
+	'The hospital is already assigned to this doctor.';

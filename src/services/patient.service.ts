@@ -1,6 +1,8 @@
+import ApiError from '@exceptions/api.error';
 import { filterObj, QueryString } from '@interfaces/query.interface';
 import { UserDocument } from '@interfaces/user.interface';
 import { patientModel } from '@models/patient.model';
+import * as strings from '@resources/strings';
 import {
 	deleteOne,
 	findAll,
@@ -8,6 +10,7 @@ import {
 	updateOne,
 } from '@services/factory.service';
 import { filteredObj } from '@utils/filter-obj';
+import { NextFunction } from 'express';
 import { UserService } from './user.service';
 
 export class PatientService {
@@ -59,7 +62,13 @@ export class PatientService {
 		return await findOne(this.patients, id);
 	}
 
-	public findPatientByUserId = async (user: UserDocument) => {
+	public findPatientByUserId = async (userId: string, next: NextFunction) => {
+		const user = await this.userService.findUserById(userId);
+
+		if (!user) {
+			return next(new ApiError(strings.USER_WITH_ID_NOT_FOUND, 404));
+		}
+
 		return await this.patients.findOne({ user: user._id });
 	};
 

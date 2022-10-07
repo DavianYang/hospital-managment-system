@@ -46,6 +46,7 @@ export const protect = catchAsync(
 
 export const restrictTo = (...roles: string[]) => {
 	return (req: Request, res: Response, next: NextFunction) => {
+		console.log(req.role.code);
 		if (!roles.includes(req.role.code)) {
 			return next(new ApiError(strings.DONT_HAVE_PERMISSION, 403));
 		}

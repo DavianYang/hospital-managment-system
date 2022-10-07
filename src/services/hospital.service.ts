@@ -1,6 +1,8 @@
+import ApiError from '@exceptions/api.error';
 import { Hospital } from '@interfaces/hospital.interface';
 import { QueryString } from '@interfaces/query.interface';
 import { hospitalModel } from '@models/hospital.model';
+import * as strings from '@resources/strings';
 import {
 	createOne,
 	deleteOne,
@@ -8,6 +10,7 @@ import {
 	findOne,
 	updateOne,
 } from '@services/factory.service';
+import { NextFunction } from 'express';
 import { DoctorService } from './doctor.service';
 
 export class HospitalService {
@@ -18,12 +21,23 @@ export class HospitalService {
 	public createHospital = async (hospitalBody: Hospital) =>
 		await createOne(this.hospitals, hospitalBody);
 
-	public addDoctor = async (hospitalId: string, doctorId: string) => {
+	public addDoctor = async (
+		hospitalId: string,
+		doctorId: string,
+		next: NextFunction,
+	) => {
+		const hospital = await this.findHospital(hospitalId);
+
+		if (hospital.doctors.includes(doctorId)) {
+			return next(new ApiError(strings.DOCTOR_ALREADY_EXIST, 404));
+		}
+
 		await this.hospitals.updateOne(
 			{ _id: hospitalId },
 			{ $push: { doctors: doctorId } },
 		);
-		await this.doctorService.addHospital(hospitalId, doctorId);
+
+		await this.doctorService.addHospital(hospitalId, doctorId, next);
 	};
 
 	// FIND ALL

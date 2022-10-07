@@ -16,6 +16,7 @@ export class AdminRoute {
 
 	private initializeRoutes() {
 		this.router.use(protect);
+		this.router.use(restrictTo(ROLE_ADMIN_CODE));
 
 		this.router
 			.route(`${this.path}/me`)
@@ -27,8 +28,6 @@ export class AdminRoute {
 				this.adminController.updateMe,
 			)
 			.delete(this.adminController.deleteMe);
-
-		this.router.use(restrictTo(ROLE_ADMIN_CODE));
 
 		this.router
 			.route(`${this.path}/`)

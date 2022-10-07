@@ -24,13 +24,6 @@ export class ScheduleService {
 		const { date, startTime, endTime, doctorId, hospitalId } = scheduleBody;
 		const parsedStartTime = moment(`${date} ${startTime}`, 'MM-DD-YYYY HH:mm');
 		const parsedEndTime = moment(`${date} ${endTime}`, 'MM-DD-YYYY HH:mm');
-		const duration = Number(
-			moment.duration(parsedEndTime.diff(parsedStartTime)).asHours(),
-		);
-
-		if (isNegative(duration)) {
-			return next(new ApiError(strings.INVALID_STARTTIME_AND_ENDTIME, 400));
-		}
 
 		const overlap = await this.findOverlapSchedule(
 			parsedStartTime.valueOf(),
@@ -63,11 +56,17 @@ export class ScheduleService {
 			date,
 			startTime: parsedStartTime.valueOf(),
 			endTime: parsedEndTime.valueOf(),
-			duration: duration,
-			approximatePatients: (duration * 60) / 15,
 			doctor: doctor._id,
 			hospital: hospital._id,
 		});
+	};
+
+	public addAppointment = async (scheduleId: string, appointmentId: string) => {
+		return await this.schedules.findOneAndUpdate(
+			{ _id: scheduleId },
+			{ $push: { appointments: appointmentId } },
+			{ returnOriginal: false },
+		);
 	};
 
 	// FIND ALL

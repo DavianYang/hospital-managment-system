@@ -1,5 +1,6 @@
 import ApiError from '@exceptions/api.error';
 import * as strings from '@resources/strings';
+import { AppointmentService } from '@services/appointment.service';
 import { AuthService } from '@services/auth.service';
 import { PatientService } from '@services/patient.service';
 import { UserService } from '@services/user.service';
@@ -10,6 +11,7 @@ export class PatientController {
 	private userService = new UserService();
 	private authService = new AuthService();
 	private patientService = new PatientService();
+	private appointmentService = new AppointmentService();
 
 	public getMe = (req: Request, res: Response, next: NextFunction) => {
 		req.params.id = req.user.id;
@@ -63,7 +65,8 @@ export class PatientController {
 			}
 
 			const patient = await this.patientService.findPatientByUserId(
-				patientUser,
+				patientUser._id,
+				next,
 			);
 
 			if (!patient) {
@@ -107,6 +110,23 @@ export class PatientController {
 			},
 		});
 	});
+
+	public createPatientAppointment = catchAsync(
+		async (req: Request, res: Response, next: NextFunction) => {
+			const createdPatient = await this.appointmentService.createAppointment(
+				req.user.id,
+				req.body,
+				next,
+			);
+
+			res.status(200).json({
+				status: 'success',
+				data: {
+					data: createdPatient,
+				},
+			});
+		},
+	);
 
 	// UPDATE
 	public updateMe = catchAsync(

@@ -1,6 +1,8 @@
+import ApiError from '@exceptions/api.error';
 import { filterObj, QueryString } from '@interfaces/query.interface';
 import { UserDocument } from '@interfaces/user.interface';
 import { doctorModel } from '@models/doctor.model';
+import * as strings from '@resources/strings';
 import {
 	deleteOne,
 	findAll,
@@ -8,6 +10,7 @@ import {
 	updateOne,
 } from '@services/factory.service';
 import { filteredObj } from '@utils/filter-obj';
+import { NextFunction } from 'express';
 import { UserService } from './user.service';
 
 export class DoctorService {
@@ -46,7 +49,16 @@ export class DoctorService {
 		});
 	}
 
-	public async addHospital(hospitalId: string, doctorId: string) {
+	public async addHospital(
+		hospitalId: string,
+		doctorId: string,
+		next: NextFunction,
+	) {
+		const doctor = await this.findDoctor(doctorId);
+
+		if (doctor.hospitals.includes(hospitalId)) {
+			return next(new ApiError(strings.HOSPITAL_ALREADY_EXIST, 404));
+		}
 		await this.doctors.updateOne(
 			{ _id: doctorId },
 			{ $push: { hospitals: hospitalId } },
@@ -63,7 +75,13 @@ export class DoctorService {
 		return await findOne(this.doctors, id);
 	}
 
-	public findDoctorByUserId = async (user: UserDocument) => {
+	public findDoctorByUserId = async (userId: string, next: NextFunction) => {
+		const user = await this.userService.findUserById(userId);
+
+		if (!user) {
+			return next(new ApiError(strings.USER_WITH_ID_NOT_FOUND, 404));
+		}
+
 		return await this.doctors.findOne({ user: user._id });
 	};
 

@@ -4,13 +4,14 @@ import { HospitalBaseDocument } from './hospital.interface';
 
 export interface Schedule {
 	date: Date;
-	startTime: Number;
-	endTime: Number;
+	startTime: number;
+	endTime: number;
 }
 
 export interface ScheduleBaseDocument extends Schedule, Document {
-	duration: Number;
-	approximatePatients: Number;
+	duration: number;
+	nPatients: number;
+	approxConsultTimeByMin: number;
 }
 
 export interface ScheduleDocument extends ScheduleBaseDocument {

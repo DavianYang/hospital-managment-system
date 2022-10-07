@@ -29,6 +29,9 @@ export class PatientRoute {
 			.delete(this.patientController.deleteMe);
 
 		// TODO: enable patient to see his appointments
+		this.router
+			.route(`${this.path}/me/appointments`)
+			.post(this.patientController.createPatientAppointment);
 
 		this.router.use(restrictTo(ROLE_ADMIN_CODE));
 

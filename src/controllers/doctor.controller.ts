@@ -62,7 +62,10 @@ export class DoctorController {
 				return next(new ApiError(strings.USER_WITH_ID_NOT_FOUND, 404));
 			}
 
-			const doctor = await this.doctorService.findDoctorByUserId(doctorUser);
+			const doctor = await this.doctorService.findDoctorByUserId(
+				req.params.id,
+				next,
+			);
 
 			if (!doctor) {
 				return next(new ApiError(strings.USER_WITH_ID_NOT_FOUND, 404));

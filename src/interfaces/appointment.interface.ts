@@ -1,10 +1,12 @@
 import { Document, Model } from 'mongoose';
-import { DoctorBaseDocument } from './doctor.interface';
-import { HospitalBaseDocument } from './hospital.interface';
+import { PatientBaseDocument } from './patient.interface';
 import { ScheduleBaseDocument } from './schedule.interface';
 
 export interface Appointment {
 	paid: Boolean;
+	token: Number;
+	approxConsultTime: Number;
+	approxCountDownTime: Number;
 	lastCreatedAt: Date;
 	lastUpdatedAt: Date;
 }
@@ -12,9 +14,10 @@ export interface Appointment {
 export interface AppointmentBaseDocument extends Appointment, Document {}
 
 export interface AppointmentDocument extends AppointmentBaseDocument {
-	doctor: DoctorBaseDocument['_id'];
-	hospital: HospitalBaseDocument['_id'];
+	patient: PatientBaseDocument['_id'];
 	schedule: ScheduleBaseDocument['_id'];
 }
 
-export type AppointmentModel = Model<AppointmentDocument>;
+export interface AppointmentModel extends Model<AppointmentDocument> {
+	calcApprox(scheduleId: string): Promise<any>;
+}
