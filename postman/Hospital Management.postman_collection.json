@@ -1,0 +1,1464 @@
+{
+	"info": {
+		"_postman_id": "bf789cdb-f66b-4c3a-ba08-7d560d3223c1",
+		"name": "Hospital Management",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "5621714"
+	},
+	"item": [
+		{
+			"name": "Admin",
+			"item": [
+				{
+					"name": "LOGIN Admin",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"superadmin@gmail.com\",\n    \"password\": \"superadmin\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}admins/login",
+							"host": [
+								"{{URL}}admins"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET Admins",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVjOGExZWM2MmY4ZmI4MTRiNTZmYTE4MyIsImlhdCI6MTY2NTExNjU0MCwiZXhwIjoxNjcyODkyNTQwfQ.VbEp3Ggt0l38OlzeFycFWacqvyTzpSQV8EZFvRYwy2c",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}admins",
+							"host": [
+								"{{URL}}admins"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CREATE Admin",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVjOGExZWM2MmY4ZmI4MTRiNTZmYTE4MyIsImlhdCI6MTY2NDg5MTEwNSwiZXhwIjoxNjcyNjY3MTA1fQ.rSRT7LUmxTrw7aJu3XQjzYYdUU8j1sxuHZ09OXPhI2A",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"admin3@gmail.com\",\n    \"password\": \"1234567890\",\n    \"passwordConfirm\": \"1234567890\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}admins",
+							"host": [
+								"{{URL}}admins"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET CURRENT Admin",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVjOGExZWM2MmY4ZmI4MTRiNTZmYTE4MyIsImlhdCI6MTY2NTExODA5MSwiZXhwIjoxNjcyODk0MDkxfQ.6ZWRKFE44yiCbX8XxszAYLcLEhPLzFQ3EmGqzKjW-K0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}admins/me",
+							"host": [
+								"{{URL}}admins"
+							],
+							"path": [
+								"me"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UPDATE Current Admin",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzM2ZhYTE3Y2I2ZDc3N2I1ZmRiZTU3NyIsImlhdCI6MTY2NTExNjcwNCwiZXhwIjoxNjcyODkyNzA0fQ.iz60B0Q9eGZFltXd05BsYi9gJut2ceoqr6mT7s2COEE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "photo",
+									"type": "file",
+									"src": "/Users/thantyarzarhein/Desktop/MMTour/dev-data/img/monica.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{URL}}admins/me",
+							"host": [
+								"{{URL}}admins"
+							],
+							"path": [
+								"me"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE Current Admin",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzM2ZhOThlY2I2ZDc3N2I1ZmRiZTUyOCIsImlhdCI6MTY2NTExNjU5MywiZXhwIjoxNjcyODkyNTkzfQ.jCTZUmmU6yAVaQuJz0tY6ZLFFiHlmpyeVVUbGejIW5g",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}admins/me",
+							"host": [
+								"{{URL}}admins"
+							],
+							"path": [
+								"me"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE Admin",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVjOGExZWM2MmY4ZmI4MTRiNTZmYTE4MyIsImlhdCI6MTY2NTExNjYzNCwiZXhwIjoxNjcyODkyNjM0fQ.5-e4rtypr5Q09atcJLUVpv7BQipKUWnB5IBx8fn6gFs",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}admins/633fa9f5cb6d777b5fdbe55e",
+							"host": [
+								"{{URL}}admins"
+							],
+							"path": [
+								"633fa9f5cb6d777b5fdbe55e"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET Admin By ID",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzM2ZhYTE3Y2I2ZDc3N2I1ZmRiZTU3NyIsImlhdCI6MTY2NTExNjcwNCwiZXhwIjoxNjcyODkyNzA0fQ.iz60B0Q9eGZFltXd05BsYi9gJut2ceoqr6mT7s2COEE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}admins/633faa18cb6d777b5fdbe579",
+							"host": [
+								"{{URL}}admins"
+							],
+							"path": [
+								"633faa18cb6d777b5fdbe579"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UPDATE Admin",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzM2ZhYTE3Y2I2ZDc3N2I1ZmRiZTU3NyIsImlhdCI6MTY2NTExNjcwNCwiZXhwIjoxNjcyODkyNzA0fQ.iz60B0Q9eGZFltXd05BsYi9gJut2ceoqr6mT7s2COEE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"updatedadmin@gmail.com\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}admins/633faa18cb6d777b5fdbe579",
+							"host": [
+								"{{URL}}admins"
+							],
+							"path": [
+								"633faa18cb6d777b5fdbe579"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "LOGOUT Admin",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzM2M0MmU2MjA0ZTI0MDE0NmU5MzNiZSIsImlhdCI6MTY2NDg5NzgwMiwiZXhwIjoxNjcyNjczODAyfQ.UQIqVbZQkj-occSg1xzrBw6O5lwqh8V6Ch9Feebu6NA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}admins/logout",
+							"host": [
+								"{{URL}}admins"
+							],
+							"path": [
+								"logout"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVjOGEyNGEwMmY4ZmI4MTRiNTZmYTE5MyIsImlhdCI6MTY2NDg5MDk1MSwiZXhwIjoxNjcyNjY2OTUxfQ.FoKUaMJrF4-bqdBQB4xlyonINhBKjGJLpTjcX4X4fMU",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Role",
+			"item": [
+				{
+					"name": "CREATE Role",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzM2ZhYTE3Y2I2ZDc3N2I1ZmRiZTU3NyIsImlhdCI6MTY2NTExNjcwNCwiZXhwIjoxNjcyODkyNzA0fQ.iz60B0Q9eGZFltXd05BsYi9gJut2ceoqr6mT7s2COEE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"code\": \"user\",\n    \"description\": \"Description For Admin Role\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}roles",
+							"host": [
+								"{{URL}}roles"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET Roles",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzM2ZhYTE3Y2I2ZDc3N2I1ZmRiZTU3NyIsImlhdCI6MTY2NTExNjcwNCwiZXhwIjoxNjcyODkyNzA0fQ.iz60B0Q9eGZFltXd05BsYi9gJut2ceoqr6mT7s2COEE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}roles",
+							"host": [
+								"{{URL}}roles"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET Role By ID",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzM2ZhYTE3Y2I2ZDc3N2I1ZmRiZTU3NyIsImlhdCI6MTY2NTExNjcwNCwiZXhwIjoxNjcyODkyNzA0fQ.iz60B0Q9eGZFltXd05BsYi9gJut2ceoqr6mT7s2COEE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}roles/5c8a1e1a2f8fb814b56fa182",
+							"host": [
+								"{{URL}}roles"
+							],
+							"path": [
+								"5c8a1e1a2f8fb814b56fa182"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UPDATE Role",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzM2ZhYTE3Y2I2ZDc3N2I1ZmRiZTU3NyIsImlhdCI6MTY2NTExNjcwNCwiZXhwIjoxNjcyODkyNzA0fQ.iz60B0Q9eGZFltXd05BsYi9gJut2ceoqr6mT7s2COEE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"code\": \"Sample Role\",\n    \"description\": \"Sample Role for Description\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}roles/633faac3cb6d777b5fdbe5c3",
+							"host": [
+								"{{URL}}roles"
+							],
+							"path": [
+								"633faac3cb6d777b5fdbe5c3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE Role",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzM2ZhYTE3Y2I2ZDc3N2I1ZmRiZTU3NyIsImlhdCI6MTY2NTExNjcwNCwiZXhwIjoxNjcyODkyNzA0fQ.iz60B0Q9eGZFltXd05BsYi9gJut2ceoqr6mT7s2COEE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}roles/633faac3cb6d777b5fdbe5c3",
+							"host": [
+								"{{URL}}roles"
+							],
+							"path": [
+								"633faac3cb6d777b5fdbe5c3"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Doctor",
+			"item": [
+				{
+					"name": "GET Doctors",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}doctors",
+							"host": [
+								"{{URL}}doctors"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CREATE Doctor",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVjOGExZWM2MmY4ZmI4MTRiNTZmYTE4MyIsImlhdCI6MTY2NDk1MjIyMSwiZXhwIjoxNjcyNzI4MjIxfQ.ozxCrsC-PUAKdDubFIucUyPdE0MxM3IabOIdVsVOwHg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"Doctor 3\",\n    \"email\": \"doctor3@gmail.com\",\n    \"password\": \"1234567890\",\n    \"passwordConfirm\": \"1234567890\",\n    \"phoneNumber\": [\"1234567890\"],\n    \"specialization\": \"M.B.B.S (Ygn) M.Med,Sc\",\n    \"feesPerSession\": 25000,\n    \"department\": \"Urology\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}doctors",
+							"host": [
+								"{{URL}}doctors"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET Doctor By ID",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}doctors/633fadadbe273ccf38cafc13",
+							"host": [
+								"{{URL}}doctors"
+							],
+							"path": [
+								"633fadadbe273ccf38cafc13"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UPDATE Doctor",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVjOGExZWM2MmY4ZmI4MTRiNTZmYTE4MyIsImlhdCI6MTY2NDk1MjIyMSwiZXhwIjoxNjcyNzI4MjIxfQ.ozxCrsC-PUAKdDubFIucUyPdE0MxM3IabOIdVsVOwHg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"Updated Kyaw Thu Ra\",\n    \"email\": \"kyawkyawthur@gmail.com\",\n    \"phoneNumber\": [\"9876543210\"]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}doctors/633fbdf41d5b8f7bf83bb220",
+							"host": [
+								"{{URL}}doctors"
+							],
+							"path": [
+								"633fbdf41d5b8f7bf83bb220"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE Doctor",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVjOGExZWM2MmY4ZmI4MTRiNTZmYTE4MyIsImlhdCI6MTY2NDk1MjIyMSwiZXhwIjoxNjcyNzI4MjIxfQ.ozxCrsC-PUAKdDubFIucUyPdE0MxM3IabOIdVsVOwHg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}doctors/633fbe051d5b8f7bf83bb22c",
+							"host": [
+								"{{URL}}doctors"
+							],
+							"path": [
+								"633fbe051d5b8f7bf83bb22c"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "REGISTER Doctor",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"Doctor 3\",\n    \"email\": \"doctor3@gmail.com\",\n    \"password\": \"1234567890\",\n    \"passwordConfirm\": \"1234567890\",\n    \"phoneNumber\": [\"1234567890\"],\n    \"specialization\": \"M.B.,B.S, M.Med.Sc (Int.Med), MRCP (UK), MRCPE. FRCP (Edin), Dr.Med.Sc (Gen.Surg), Dip.Med.Sc (Med.Edu), Cert. in Liver Transplantation\",\n    \"department\": \"Urology\",\n    \"feesPerSession\": 25000\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}doctors/register",
+							"host": [
+								"{{URL}}doctors"
+							],
+							"path": [
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "LOGIN Doctor",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"doctor3@gmail.com\",\n    \"password\": \"1234567890\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}doctors/login",
+							"host": [
+								"{{URL}}doctors"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET Current Doctor",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzM2ZiZjA0MWQ1YjhmN2JmODNiYjI5MyIsImlhdCI6MTY2NTEyNTIzNiwiZXhwIjoxNjcyOTAxMjM2fQ.vyT4Kx4sJHjLT10yxfDRg_l7p-bPWQ9xRtWhJiQ345g",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}doctors/me",
+							"host": [
+								"{{URL}}doctors"
+							],
+							"path": [
+								"me"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UPDATE Current Doctor",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzM2ZiZjA0MWQ1YjhmN2JmODNiYjI5MyIsImlhdCI6MTY2NTEyNTIzNiwiZXhwIjoxNjcyOTAxMjM2fQ.vyT4Kx4sJHjLT10yxfDRg_l7p-bPWQ9xRtWhJiQ345g",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"Updated Doctor\",\n    \"phoneNumber\": [\"1232512122\"]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}doctors/me",
+							"host": [
+								"{{URL}}doctors"
+							],
+							"path": [
+								"me"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE Current Doctor",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzM2ZiZjA0MWQ1YjhmN2JmODNiYjI5MyIsImlhdCI6MTY2NTEyNTIzNiwiZXhwIjoxNjcyOTAxMjM2fQ.vyT4Kx4sJHjLT10yxfDRg_l7p-bPWQ9xRtWhJiQ345g",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}doctors/me",
+							"host": [
+								"{{URL}}doctors"
+							],
+							"path": [
+								"me"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "LOGOUT Doctor",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}doctors/logout",
+							"host": [
+								"{{URL}}doctors"
+							],
+							"path": [
+								"logout"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Patient",
+			"item": [
+				{
+					"name": "GET Patients",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVjOGExZWM2MmY4ZmI4MTRiNTZmYTE4MyIsImlhdCI6MTY2NTEyMjIxMywiZXhwIjoxNjcyODk4MjEzfQ.dCszmIYeWcZsTER5vsfG5Ii62GbcTwgngD1xy6Lp98g",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}patients",
+							"host": [
+								"{{URL}}patients"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "REGISTER Patient",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"User 5\",\n    \"email\": \"user5@gmail.com\",\n    \"password\": \"1234567890\",\n    \"passwordConfirm\": \"1234567890\",\n    \"phoneNumber\": [\"1234567890\"],\n    \"age\": 18,\n    \"state\": \"Yangon\",\n    \"township\": \"Pazundaung\",\n    \"gender\": \"Male\"   \n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}patients/register",
+							"host": [
+								"{{URL}}patients"
+							],
+							"path": [
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "LOGIN Patient",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"user5@gmail.com\",\n    \"password\": \"1234567890\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}patients/login",
+							"host": [
+								"{{URL}}patients"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "LOGOUT Patient",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzM2VkZjZjOTIyZTQzZjFiZGNhZDE5ZCIsImlhdCI6MTY2NTA2NDk0OCwiZXhwIjoxNjcyODQwOTQ4fQ.m6CPpZv7qvZi-GN9BVcZ6MYzbK8JqV0DCOtHcR_ErgI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}patients/logout",
+							"host": [
+								"{{URL}}patients"
+							],
+							"path": [
+								"logout"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UPDATE Patient",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVjOGExZWM2MmY4ZmI4MTRiNTZmYTE4MyIsImlhdCI6MTY2NTA2NTAyNiwiZXhwIjoxNjcyODQxMDI2fQ.6N_3hpOjDsyy4pyo4F_OT0r2B7NdprYf7CDlwqmbd8Q",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"Updated User\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}patients/633fc1c53d952a48e6b6bcc3",
+							"host": [
+								"{{URL}}patients"
+							],
+							"path": [
+								"633fc1c53d952a48e6b6bcc3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UPDATE Current Patient",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzM2ZjMWM0M2Q5NTJhNDhlNmI2YmNjMSIsImlhdCI6MTY2NTEyMjgxOSwiZXhwIjoxNjcyODk4ODE5fQ.iiYxOnrzs6Brh33Et3USAHRKmG5Yw6Va_mCTFcuySX8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "photo",
+									"type": "file",
+									"src": "/Users/thantyarzarhein/Desktop/MMTour/dev-data/img/leo.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{URL}}patients/me",
+							"host": [
+								"{{URL}}patients"
+							],
+							"path": [
+								"me"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE Patient",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVjOGExZWM2MmY4ZmI4MTRiNTZmYTE4MyIsImlhdCI6MTY2NTA2NTUyMCwiZXhwIjoxNjcyODQxNTIwfQ.M1YPO5i7ZZxYajPrFf4SSi-PKRyCkc25kzEFDDpNlSw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}patients/633ee297188f6c1cfe8f125c",
+							"host": [
+								"{{URL}}patients"
+							],
+							"path": [
+								"633ee297188f6c1cfe8f125c"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET Patient By ID",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVjOGExZWM2MmY4ZmI4MTRiNTZmYTE4MyIsImlhdCI6MTY2NTA2NTAyNiwiZXhwIjoxNjcyODQxMDI2fQ.6N_3hpOjDsyy4pyo4F_OT0r2B7NdprYf7CDlwqmbd8Q",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}patients/633fc1c53d952a48e6b6bcc3",
+							"host": [
+								"{{URL}}patients"
+							],
+							"path": [
+								"633fc1c53d952a48e6b6bcc3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE Current Patient",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzM2ZjMjQ0M2Q5NTJhNDhlNmI2YmNmOSIsImlhdCI6MTY2NTEyMjg4NSwiZXhwIjoxNjcyODk4ODg1fQ.antSgNL9rfN2cfkEr6RA40Q7I-GYwlVCxFi3PihPOuM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}patients/me",
+							"host": [
+								"{{URL}}patients"
+							],
+							"path": [
+								"me"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET Current Patient",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzM2ZjMWM0M2Q5NTJhNDhlNmI2YmNjMSIsImlhdCI6MTY2NTEyMjgxOSwiZXhwIjoxNjcyODk4ODE5fQ.iiYxOnrzs6Brh33Et3USAHRKmG5Yw6Va_mCTFcuySX8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}patients/me",
+							"host": [
+								"{{URL}}patients"
+							],
+							"path": [
+								"me"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Hospital",
+			"item": [
+				{
+					"name": "CREATE Hospital",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVjOGExZWM2MmY4ZmI4MTRiNTZmYTE4MyIsImlhdCI6MTY2NTExNTUwOCwiZXhwIjoxNjcyODkxNTA4fQ.ami3zLr8_bNN5T8ceKWpJPUtftLroAA-YBn7-Hi0QIM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Hospital 2\",\n    \"phoneNumber\": [\"09123456789\"],\n    \"location\": {\n        \"type\": \"Point\",\n        \"description\": \"Yangon, Myanmar\",\n        \"coordinates\": [\n            16.8128957,\n            96.1757427\n        ],\n        \"address\": \"400 Kyaik Ka San Rd, Yangon, Myanmar (Burma)\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}hospitals",
+							"host": [
+								"{{URL}}hospitals"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET Hospitals",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}hospitals",
+							"host": [
+								"{{URL}}hospitals"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET Hospital By ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}hospitals/633fbe2f1d5b8f7bf83bb25b",
+							"host": [
+								"{{URL}}hospitals"
+							],
+							"path": [
+								"633fbe2f1d5b8f7bf83bb25b"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UPDATE Hospital",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVjOGExZWM2MmY4ZmI4MTRiNTZmYTE4MyIsImlhdCI6MTY2NDk2NTk1OCwiZXhwIjoxNjcyNzQxOTU4fQ.X6FMYTKuKYqy5VI-dcQtP-9DOA4VZU9IdNl9sj3qTI0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Sample Hospital 2\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}hospitals/633fbe2f1d5b8f7bf83bb25b",
+							"host": [
+								"{{URL}}hospitals"
+							],
+							"path": [
+								"633fbe2f1d5b8f7bf83bb25b"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE Hospital",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVjOGExZWM2MmY4ZmI4MTRiNTZmYTE4MyIsImlhdCI6MTY2NTExNDgxNiwiZXhwIjoxNjcyODkwODE2fQ.9BeVJ-ZP1z-ECxShRyiln09MHw458pUGv8GVwDdZNHE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}hospitals/633fbe2f1d5b8f7bf83bb25b",
+							"host": [
+								"{{URL}}hospitals"
+							],
+							"path": [
+								"633fbe2f1d5b8f7bf83bb25b"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Schedule",
+			"item": [
+				{
+					"name": "GET Schedules",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}schedules",
+							"host": [
+								"{{URL}}schedules"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CREATE Schedule",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVjOGExZWM2MmY4ZmI4MTRiNTZmYTE4MyIsImlhdCI6MTY2NTEyMjIxMywiZXhwIjoxNjcyODk4MjEzfQ.dCszmIYeWcZsTER5vsfG5Ii62GbcTwgngD1xy6Lp98g",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"date\": \"11-10-2022\",\n    \"startTime\": \"02:30\",\n    \"endTime\": \"04:30\",\n    \"doctorId\": \"633fbdf41d5b8f7bf83bb220\",\n    \"hospitalId\": \"633fbe251d5b8f7bf83bb243\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}schedules",
+							"host": [
+								"{{URL}}schedules"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET Schedule by ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}schedules/633ecbed6fc8b039074e4ca6",
+							"host": [
+								"{{URL}}schedules"
+							],
+							"path": [
+								"633ecbed6fc8b039074e4ca6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UPDATE Schedule",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVjOGExZWM2MmY4ZmI4MTRiNTZmYTE4MyIsImlhdCI6MTY2NTA1MTc5NiwiZXhwIjoxNjcyODI3Nzk2fQ.XPLe1WrQ48eidXM675GZqjbOJluvxbU-qdXUFa-SJHA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"startTime\": \"19:30\",\n    \"endTime\": \"20:30\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}schedules/633ecbed6fc8b039074e4ca6",
+							"host": [
+								"{{URL}}schedules"
+							],
+							"path": [
+								"633ecbed6fc8b039074e4ca6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE Schedule",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVjOGExZWM2MmY4ZmI4MTRiNTZmYTE4MyIsImlhdCI6MTY2NTA2NTczOCwiZXhwIjoxNjcyODQxNzM4fQ.KvF4JXUyScWfbqs88r349pbpgX7lWNinrVoL0Hk6IWY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}schedules/633ecbed6fc8b039074e4ca6",
+							"host": [
+								"{{URL}}schedules"
+							],
+							"path": [
+								"633ecbed6fc8b039074e4ca6"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Patient/Appointment",
+			"item": [
+				{
+					"name": "CREATE Appointment By Patient",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzM2ZjNzFlNDFkZmI1NjU2MWQyYWNmOSIsImlhdCI6MTY2NTEyNTAzMSwiZXhwIjoxNjcyOTAxMDMxfQ.P7BewWKMoctB_o2XW11Se7GXcj9zeJYdGFcGzvb0KdY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"scheduleId\": \"633fca54a9b4877ffdc06249\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}patients/me/appointments",
+							"host": [
+								"{{URL}}patients"
+							],
+							"path": [
+								"me",
+								"appointments"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Doctor/Hospital",
+			"item": [
+				{
+					"name": "ADD Doctor to Hospittal",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVjOGExZWM2MmY4ZmI4MTRiNTZmYTE4MyIsImlhdCI6MTY2NTExMzg3MCwiZXhwIjoxNjcyODg5ODcwfQ.q2JOIeRUQh6oEprJFpE4y7FAnWJEkrP1yNP-gvdpDKI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"doctorId\": \"633fbdf41d5b8f7bf83bb220\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}hospitals/633fbe251d5b8f7bf83bb243/doctor",
+							"host": [
+								"{{URL}}hospitals"
+							],
+							"path": [
+								"633fbe251d5b8f7bf83bb243",
+								"doctor"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "URL",
+			"value": "http://127.0.0.1:8000/api/v1/",
+			"type": "string"
+		}
+	]
+}
