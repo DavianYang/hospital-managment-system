@@ -7,23 +7,23 @@
 
 ## Project Setup
 
-#### Git Clone the repository
+### Git Clone the repository
 
 ```
 git clone https://github.com/DavianYang/hospital-managment-system.git
 ```
 
-#### Installing Dependency
+### Installing Dependency
 
 ```
 pnpm i
 ```
 
-#### Configure Environment
+### Configure Environment
 
 Please enter your development environment config by rename `.env.dev.example` `.env.dev` 
 
-#### Running in development
+### Running in development
 
 ```
 pnpm dev
