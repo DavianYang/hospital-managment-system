@@ -32,6 +32,7 @@ export class DashboardRoute {
 
 		this.router
 			.route(`${this.doctorPath}/:id`)
+			.get(this.doctorController.getDoctor)
 			.patch(this.doctorController.updateDoctor)
 			.delete(this.doctorController.deleteDoctor);
 

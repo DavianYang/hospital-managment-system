@@ -34,10 +34,6 @@ export class PublicRoute {
 			.route(`${this.doctorPath}/`)
 			.get(this.doctorController.getAllDoctors);
 
-		this.router
-			.route(`${this.doctorPath}/:id`)
-			.get(this.doctorController.getDoctor);
-
 		// Hospital
 		this.router
 			.route(`${this.hospitalPath}/`)
