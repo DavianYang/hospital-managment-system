@@ -5,7 +5,7 @@ import {
 	deleteOne,
 	findAll,
 	findOne,
-	updateOne,
+	updateOne
 } from '@services/factory.service';
 import { filteredObj } from '@utils/filter-obj';
 import { UserService } from './user.service';
@@ -44,8 +44,8 @@ export class AdminService {
 		return await this.admins.findOne({ email });
 	};
 
-	public findAdminByUserId = async (user: UserDocument) => {
-		return await this.admins.findOne({ user: user._id });
+	public findAdminByUserId = async (userId: string) => {
+		return await this.admins.findOne({ user: userId });
 	};
 
 	// UPDATE

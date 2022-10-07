@@ -7,7 +7,7 @@ import {
 	deleteOne,
 	findAll,
 	findOne,
-	updateOne,
+	updateOne
 } from '@services/factory.service';
 import { filteredObj } from '@utils/filter-obj';
 import { NextFunction } from 'express';
@@ -59,6 +59,7 @@ export class DoctorService {
 		if (doctor.hospitals.includes(hospitalId)) {
 			return next(new ApiError(strings.HOSPITAL_ALREADY_EXIST, 404));
 		}
+
 		await this.doctors.updateOne(
 			{ _id: doctorId },
 			{ $push: { hospitals: hospitalId } },
@@ -76,13 +77,7 @@ export class DoctorService {
 	}
 
 	public findDoctorByUserId = async (userId: string, next: NextFunction) => {
-		const user = await this.userService.findUserById(userId);
-
-		if (!user) {
-			return next(new ApiError(strings.USER_WITH_ID_NOT_FOUND, 404));
-		}
-
-		return await this.doctors.findOne({ user: user._id });
+		return await this.doctors.findOne({ user: userId});
 	};
 
 	// UPDATE

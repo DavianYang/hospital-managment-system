@@ -36,6 +36,8 @@ export const protect = catchAsync(
 
 		const currentRole = await roleModel.findById(currentUser.role._id);
 
+		console.log(currentUser)
+
 		req.user = currentUser;
 		req.role = currentRole;
 		res.locals.user = currentUser;

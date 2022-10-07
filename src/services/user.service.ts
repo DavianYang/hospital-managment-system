@@ -1,15 +1,15 @@
 import {
 	ROLE_ADMIN_CODE,
 	ROLE_DOCTOR_CODE,
-	ROLE_PATIENT_CODE,
+	ROLE_PATIENT_CODE
 } from '@commons/constant.common';
-import { filterObj, QueryString } from '@interfaces/query.interface';
+import { QueryString } from '@interfaces/query.interface';
 import { userModel } from '@models/user.model';
 import {
 	deleteOne,
 	findAll,
 	findOne,
-	updateOne,
+	updateOne
 } from '@services/factory.service';
 import { ObjectId } from 'mongodb';
 import { RoleService } from './role.service';
@@ -18,16 +18,6 @@ export class UserService {
 	private users = userModel;
 
 	private roleService = new RoleService();
-
-	private filterObj = (obj: filterObj, ...allowedFields: string[]) => {
-		const newObj: filterObj = {};
-
-		Object.keys(obj).forEach((el: string) => {
-			if (allowedFields.includes(el)) newObj[el] = obj[el];
-		});
-
-		return newObj;
-	};
 
 	// CREATE
 	private createUser = async (

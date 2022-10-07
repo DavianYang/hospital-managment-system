@@ -35,7 +35,7 @@ export class AdminController {
 				return next(new ApiError(strings.USER_WITH_ID_NOT_FOUND, 404));
 			}
 
-			const admin = await this.adminService.findAdminByUserId(adminUser);
+			const admin = await this.adminService.findAdminByUserId(adminUser._id.toString());
 
 			if (!admin) {
 				return next(new ApiError(strings.USER_WITH_ID_NOT_FOUND, 404));

@@ -45,13 +45,7 @@ const doctorSchema = new Schema<DoctorDocument>({
 			type: Types.ObjectId,
 			ref: 'Hospital',
 		},
-	],
-	schedules: [
-		{
-			type: Types.ObjectId,
-			ref: 'Schedule',
-		},
-	],
+	]
 });
 
 doctorSchema.index({ hospitals: 1 }, { unique: true });

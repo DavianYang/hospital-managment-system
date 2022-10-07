@@ -6,9 +6,8 @@ import {
 	deleteOne,
 	findAll,
 	findOne,
-	updateOne,
+	updateOne
 } from '@services/factory.service';
-import { isNegative } from '@utils/shared.util';
 import { NextFunction } from 'express';
 import moment from 'moment';
 import { DoctorService } from './doctor.service';
