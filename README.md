@@ -152,3 +152,10 @@ Prefix API - `/api/v1`
       `departmentHeads`
 - [ ] Able to guest checkout for `patients` when posting `appointments`
 - [ ] Payment System
+
+### Personal Notes
+
+Even though MongoDB is good for calculate statics, and query pipeline, however, for complex relationship models, SQL databases would be the most appropriate choice.
+
+### References
+- [CareMetBot](https://caremebot.com/)
