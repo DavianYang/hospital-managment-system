@@ -41,49 +41,56 @@ Prefix API - `/api/v1`
 
 ### Admin
 
-- [x] `POST`: `/admins/login`
-- [x] `POST`: `/admins/logout`
-- [x] `GET`: `/admins`
-- [x] `POST`: `/admins`
-- [x] `GET`: `/admins/:id`
-- [x] `PATCH`: `/admins/:id`
-- [x] `DELETE`: `/admins/:id`
-- [x] `GET`: `/admins/me`
-- [x] `PATCH`: `/admins/me`
-- [x] `DELETE`: `/admins/me`
+- [x] `POST`: `/admins/login`               - Login admin user (able to configure superadmin in [config](src/config.ts))
+- [x] `POST`: `/admins/logout`              - Logout admin user
+- [x] `GET`: `/admins`                      - List admin users
+- [x] `POST`: `/admins`                     - Create admin user
+- [x] `GET`: `/admins/:id`                  - Get admin user with given id by admin
+- [x] `PATCH`: `/admins/:id`                - Update admin user with given id by admin
+- [x] `DELETE`: `/admins/:id`               - Delete admin user with given id by admin
+- [x] `GET`: `/admins/me`                   - Check profile of current admin user
+- [x] `PATCH`: `/admins/me`                 - Update profile of current admin user (unable to update `email` and `password`)
+- [x] `DELETE`: `/admins/me`                - Delete profile of current admin user (unable to delete document instead of active: `false`)
 
 ### Doctor
 
-- [x] `POST`: `/doctors/register`
-- [x] `POST`: `/doctors/login`
-- [x] `POST`: `/doctors/logout`
-- [x] `GET`: `/doctors`
-- [x] `POST`: `/doctors`
-- [x] `GET`: `/doctors/:id`
-- [x] `PATCH`: `/doctors/:id`
-- [x] `DELETE`: `/doctors/:id`
-- [x] `GET`: `/doctors/me`
-- [x] `PATCH`: `/doctors/me`
-- [x] `DELETE`: `/doctors/me`
-- [ ] `GET`: `/doctors/schedules`
-- [ ] `DELETE`: `/doctors/schedules`
+- [x] `POST`: `/doctors/register`           - Register doctor user
+- [x] `POST`: `/doctors/login`              - Login doctor user
+- [x] `POST`: `/doctors/logout`             - Logout doctor user
+- [x] `GET`: `/doctors`                     - List doctor users publicly
+- [x] `POST`: `/doctors`                    - Create doctor user by admin
+- [x] `GET`: `/doctors/:id`                 - Get doctor user with given id by admin
+- [x] `PATCH`: `/doctors/:id`               - Update doctor user with given id by admin
+- [x] `DELETE`: `/doctors/:id`              - Delete doctor user with given id by admin
+- [x] `GET`: `/doctors/me`                  - Check profile of current doctor user
+- [x] `PATCH`: `/doctors/me`                - Update profile of current doctor user (unable to update `email` and `password`)
+- [x] `DELETE`: `/doctors/me`               - Delete profile of current admin user (unable to delete document instead of active: `false`)
+- [ ] `GET`: `/doctors/schedules`           - Get schedules of current doctor user
+- [ ] `DELETE`: `/doctors/schedules`        - Delete schedules of current doctor user
 
 ### Patient
 
-- [x] `POST`: `/patients/register`
-- [x] `POST`: `/patients/login`
-- [x] `POST`: `/patients/logout`
-- [x] `GET`: `/patients`
-- [x] `POST`: `/patients`
-- [x] `GET`: `/patients/:id`
-- [x] `PATCH`: `/patients/:id`
-- [x] `DELETE`: `/patients/:id`
-- [x] `GET`: `/patients/me`
-- [x] `PATCH`: `/patients/me`
-- [x] `DELETE`: `/patients/me`
-- [ ] `GET`: `/patients/me/appointments`
-- [x] `POST`: `/patients/me/appointments`
-- [ ] `DELETE`: `/patients/me/appointments`
+- [x] `POST`: `/patients/register`          - Register patient user
+- [x] `POST`: `/patients/login`             - Login patient user
+- [x] `POST`: `/patients/logout`            - Logout patient user
+- [x] `GET`: `/patients`                    - List patient users by admin
+- [x] `POST`: `/patients`                   - Create patient user by admin
+- [x] `GET`: `/patients/:id`                - Get patient user with given id by admin
+- [x] `PATCH`: `/patients/:id`              - Update patient user with given id by admin
+- [x] `DELETE`: `/patients/:id`             - Delete patient user with given id by admin
+- [x] `GET`: `/patients/me`                 - Check profile of current patient user
+- [x] `PATCH`: `/patients/me`               - Update profile of current patient user (unable to update `email` and `password`)
+- [x] `DELETE`: `/patients/me`              - Delete profile of current patient user (unable to delete document instead of active: `false`)
+- [ ] `GET`: `/patients/me/appointments`    - Get appointments of current patient user
+- [x] `POST`: `/patients/me/appointments`   - Create appointments of current patient user
+- [ ] `DELETE`: `/patients/me/appointments` - Cancel appointments of current patient user
+
+### Role
+- [x] `GET`: `/roles`
+- [x] `POST`: `/roles`
+- [x] `GET`: `/roles/:id`
+- [x] `PATCH`: `/roles/:id`
+- [x] `DELETE`: `/roles/:id`
 
 ### Hospital
 
@@ -111,6 +118,7 @@ Prefix API - `/api/v1`
 - [ ] Need better route configuration
 - [ ] Need better authorization
 - [ ] Plugin system with event emitting for Email, SMS and others
+- [ ] Instead of using `JWT` token, suggest to use `Session` for better control on token management
 
 ### Type check
 - [ ] Update the `type` of input service body (current defined as `any`)
