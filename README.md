@@ -86,28 +86,28 @@ Prefix API - `/api/v1`
 - [ ] `DELETE`: `/patients/me/appointments` - Cancel appointments of current patient user
 
 ### Role
-- [x] `GET`: `/roles`
-- [x] `POST`: `/roles`
-- [x] `GET`: `/roles/:id`
-- [x] `PATCH`: `/roles/:id`
-- [x] `DELETE`: `/roles/:id`
+- [x] `GET`: `/roles`                       - List roles by admin user
+- [x] `POST`: `/roles`                      - Create role by admin user
+- [x] `GET`: `/roles/:id`                   - Get role with given id by admin user
+- [x] `PATCH`: `/roles/:id`                 - Update role with given id by admin user
+- [x] `DELETE`: `/roles/:id`                - Delete role with given id by admin user
 
 ### Hospital
 
-- [x] `GET`: `/hospitals`
-- [x] `POST`: `/hospitals`
-- [x] `GET`: `/hospitals/:id`
-- [x] `PATCH`: `/hospitals/:id`
-- [x] `DELETE`: `/hospitals/:id`
-- [x] `POST`: `/hospitals/:id/doctor`
+- [x] `GET`: `/hospitals`                   - List hospitals publicly
+- [x] `POST`: `/hospitals`                  - Create hospital by admin user
+- [x] `GET`: `/hospitals/:id`               - Get hospital with given id publicly
+- [x] `PATCH`: `/hospitals/:id`             - Update hospital with given id by admin user
+- [x] `DELETE`: `/hospitals/:id`            - Delete hospital with given id by admin user
+- [x] `POST`: `/hospitals/:id/doctor`       - Add doctor with given id to hospital with given id
 
 ### Schedule
 
-- [x] `GET`: `/schedules`
-- [x] `POST`: `/schedules`
-- [x] `GET`: `/schedules/:id`
-- [x] `PATCH`: `/schedules/:id`
-- [x] `DELETE`: `/schedules/:id`
+- [x] `GET`: `/schedules`                   - List schedules publicly
+- [x] `POST`: `/schedules`                  - Create schedule by admin user
+- [x] `GET`: `/schedules/:id`               - Get schedule with given id publicly
+- [x] `PATCH`: `/schedules/:id`             - Update schedule with given id by admin user
+- [x] `DELETE`: `/schedules/:id`            - Delete schedule with given id by admin user
 
 ## In case of Future Development
 
