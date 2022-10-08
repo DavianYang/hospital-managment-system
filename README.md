@@ -1,5 +1,9 @@
 # Hospital Management System
 
+## Description
+
+This is a coding test with the time given 24 hours (2 days).
+
 ## Required tools for Development
 
 - [VSCode](https://code.visualstudio.com/)
@@ -100,15 +104,25 @@ Prefix API - `/api/v1`
 
 ## In case of Future Development
 
+### Architecture and Coding Flow
+
+- [ ] Transaction required in routes
+- [ ] Suggest to use IOC container for dependency injection and modular development (example, [inversify](https://inversify.io/))
+- [ ] Need better route configuration
+- [ ] Need better authorization
+- [ ] Plugin system with event emitting for Email, SMS and others
+
+### Type check
 - [ ] Update the `type` of input service body (current defined as `any`)
+
+### Features
 - [ ] Check open and closed hour of hospital when adding `schedules`
 - [ ] Cancel `Appointment`
 - [ ] `Patients` can check their appointment
 - [ ] `Doctors` can check their schedules
-- [ ] Transaction required in routes
 - [ ] Caculate approximate countdown time
 - [ ] Able to publicly view single `doctor` by ID
 - [ ] Create `ROLE_SUPER_ADMIN` for root `superuser`
-- [ ] Create staff related to hospital such as `receptionist`, `nurses`,
-      `departmentHeads`
+- [ ] Create staff related to hospital such as `receptionist`, `nurses`, `departmentHeads`
 - [ ] Able to guest checkout for `patients` when posting `appointments`
+- [ ] Payment System
