@@ -114,7 +114,7 @@ Prefix API - `/api/v1`
 ### Architecture and Coding Flow
 
 - [ ] Transaction required in routes
-- [ ] Suggest to use IOC container for dependency injection and modular development (e.g, [inversify](https://inversify.io/), [nestjs](https://nestjs.com/))
+- [ ] Suggest to use inversion of control (IoC) container for dependency injection and modular development (e.g, [inversify](https://inversify.io/), [nestjs](https://nestjs.com/))
 - [ ] Need better route configuration
 - [ ] Need better authorization
 - [ ] Plugin system with event emitting for Email, SMS and others
